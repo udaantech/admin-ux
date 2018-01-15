@@ -1,0 +1,117 @@
+<div id="page-wrapper">
+<div header-bar></div>
+<div side-bar></div>
+<div id="page-content-wrapper" ng-init="editUserForm()" ng-controller="UserCtrl">
+    <div id="page-content">
+
+            <div class="container">
+
+<div id="page-title">
+    <h2>Update User</h2>
+    <p></p>
+</div>
+
+<div class="panel">
+    <div class="panel-body">
+        <h3 class="title-hero">
+            User
+        </h3>
+        <div class="example-box-wrapper">
+            <form name="form" ng-submit="updateUser(user)" class="form-horizontal bordered-row">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">First Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="" name="firstname" ng-model="user.firstname" placeholder="Enter firstname" required>
+                    </div>
+                    <span ng-show="form.firstname.$dirty && form.firstname.$error.required">Firstname is required</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Last Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="" name="lastname" ng-model="user.lastname" placeholder="Enter lastname" required>
+                    </div>
+                    <span ng-show="form.lastname.$dirty && form.lastname.$error.required">Lastname is required</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="" name="email" ng-model="user.email" placeholder="Enter email" required>
+                    </div>
+                    <span ng-show="form.email.$dirty && form.email.$invalid">
+                    <span ng-show="form.email.$error.required">Email is required.</span>
+                    <span ng-show="form.email.$error.email">Invalid email address.</span>
+                    </span>
+                </div>
+                
+                <div class="form-group text-center">
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Save</button>
+                </div>
+               <!--  <div class="form-group">
+                    <label class="col-sm-3 control-label">Select</label>
+                    <div class="col-sm-6">
+                        <select class="form-control single">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div> -->
+               
+                <!-- <div class="form-group">
+                    <label class="col-sm-3 control-label">Inline checkbox</label>
+                    <div class="col-sm-6">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="" value="option1">
+                            Checkbox 1
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="" value="option2">
+                            Checkbox 2
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="" value="option3">
+                            Checkbox 3
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" disabled id="" value="option4">
+                            Disabled checkbox
+                        </label>
+                    </div>
+                </div> -->
+
+              <!--   <div class="form-group">
+                    <label class="col-sm-3 control-label">Inline radio</label>
+                    <div class="col-sm-6">
+                        <label class="radio-inline">
+                            <input type="radio" id="" name="example-radio1" value="option1">
+                            Radio 1
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="" name="example-radio1" value="option2">
+                            Radio 2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="" name="example-radio1" value="option3">
+                            Radio 3
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" disabled id="" name="example-radio1" value="option4">
+                            Disabled radio
+                        </label>
+                    </div>
+                </div> -->
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+       </div>
+
+    </div>
+</div>
+</div>

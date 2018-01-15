@@ -1,0 +1,45 @@
+<div id="page-wrapper">
+    <div header-bar></div>
+    <div side-bar></div>
+    <div id="page-content-wrapper" ng-init="viewUser()" ng-controller="UserCtrl">
+        <div id="page-content">
+
+            <div class="container">
+
+                <div id="page-title">
+                    <h2>View User
+                        <span class="pull-right">
+                            <a href="/#!/userlist" class="btn btn-primary" title="Back">Back</a>
+                        </span>
+                    </h2>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-body">
+                        <h3 class="title-hero">
+                            User
+                        </h3>
+                        <div class="example-box-wrapper">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <td>{{user.firstname}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Last Name</th>
+                                        <td>{{user.lastname}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email</th>
+                                        <td>{{user.email}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>

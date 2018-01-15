@@ -1,0 +1,42 @@
+<div id="page-wrapper">
+    <div header-bar></div>
+    <div side-bar></div>
+    <div id="page-content-wrapper" ng-init="viewRole()" ng-controller="RoleCtrl">
+        <div id="page-content">
+
+            <div class="container">
+
+                <div id="page-title">
+                    <h2>View Role
+                        <span class="pull-right">
+                            <a href="/#!/roleslist" class="btn btn-primary" title="Back">Back</a>
+                        </span>
+                    </h2>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-body">
+                        <h3 class="title-hero">
+                            Role
+                        </h3>
+                        <div class="example-box-wrapper">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>Name</th>
+                                        <td>{{role.name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Last Name</th>
+                                        <td>{{role.description}}</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>
