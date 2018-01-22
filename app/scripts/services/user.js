@@ -8,7 +8,8 @@
  * Factory in the ladakApp.
  */
 angular.module('ladakApp')
-  .factory('User', ['$http', 'endpoint', function($http, endpoint) {
+  .factory('User', ['$http', 'endpoint','SessionService', function($http, endpoint, SessionService) {
+
     return {
         getLogin: function(userData) {
             return $http.post(endpoint+'users/login', userData);
@@ -23,19 +24,31 @@ angular.module('ladakApp')
             return $http.post(endpoint+'users/changepassword/'+userData.id, userData);
         },
         getUserList: function() {
-            return $http.get(endpoint+'users/index');
+            return $http.get(endpoint+'users/index', {
+                 headers:{ 'x-access-token':  SessionService.getSessionUser().token }
+            });
         },
         createUser: function(userData) {
-            return $http.post(endpoint+'users/create', userData);
+            return $http.post(endpoint+'users/create', userData, {
+                headers:{ 'x-access-token':  SessionService.getSessionUser().token }
+            });
         },
         viewUserById: function(userId) {
-            return $http.get(endpoint+'users/view/'+userId);
+            return $http.get(endpoint+'users/view/'+userId, {
+                headers:{ 'x-access-token':  SessionService.getSessionUser().token }
+            });
         },
         updateUser: function(userId, userData) {
-            return $http.put(endpoint+'users/update/'+userId, userData)
+            return $http.put(endpoint+'users/update/'+userId, userData, {
+                headers:{ 'x-access-token':  SessionService.getSessionUser().token }
+            });
         },
         deleteUser: function(userId) {
-            return $http.delete(endpoint+'users/delete/'+userId);
+            return $http.delete(endpoint+'users/delete/'+userId, {
+                headers:{ 'x-access-token':  SessionService.getSessionUser().token }
+            });
         }
     };
   }]);
+
+

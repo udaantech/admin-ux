@@ -2,53 +2,90 @@
 
 /**
  * @ngdoc function
- * @name ladakApp.controller:RoleCtrl
+ * @name ladakApp.controller:OutletCtrl
  * @description
- * # RoleCtrl
+ * # OutletCtrl
  * Controller of the ladakApp
  */
 angular.module('ladakApp')
-    .controller('RoleCtrl', ['Roles', 'SessionService', '$location', '$scope', '$rootScope', '$route', '$routeParams', 'SweetAlert', function(Roles, SessionService, $location, $scope, $rootScope, $route, $routeParams, SweetAlert) {
-        
-        $scope.rolesList = function() {
-            $rootScope.showLoader = true;
+    .controller('OutletCtrl', ['Outlet', 'User', 'OutletType', 'SessionService', '$location', '$scope', '$route', '$rootScope', '$routeParams', 'SweetAlert', function(Outlet, User, OutletType, SessionService, $location, $scope, $route, $rootScope, $routeParams, SweetAlert) {
+
+        function userList() {
             if(SessionService.isAuthenticated() == true) {
-                Roles.getRolesList().then(
+                User.getUserList().then(
                     function(response) {
                         if(response.data.status == "success") {
-                            $rootScope.showLoader = false;
-                            $scope.roleslist = response.data.result;
+                            $scope.userslistData = response.data.result;
                         }
                     },
                     function(err) {
-                        $rootScope.showLoader = false;
-                        SweetAlert.swal("Error", err.data.message + ":(", "error");
+                        //console.log('error', err);
                     });
             } else {
-                $rootScope.showLoader = false;
                 $location.path('/');
             }
         }
 
-        $scope.createRoleForm = function() {
+        userList();
+
+        function outletTypeList() {
+            if(SessionService.isAuthenticated() == true) {
+                OutletType.getOutletTypeList().then(
+                    function(response) {
+                        if(response.data.status == "success") {
+                            $scope.outletTypelistData = response.data.result;
+                        }
+                    },
+                    function(err) {
+                        console.log('error', err);
+                    });
+            } else {
+                $location.path('/');
+            }
+        }
+
+        outletTypeList();
+
+        $scope.myVar = "5a585ab973b38330416cf38b";
+    	$scope.outletList = function() {
+    		$rootScope.showLoader = true;
+    		if(SessionService.isAuthenticated() == true) {
+    			Outlet.getOutletList().then(
+    				function(response) {
+    					if(response.data.status == "success") {
+    						$rootScope.showLoader = false;
+    						$scope.outletlist = response.data.result;
+    					}
+    				},
+    				function(err) {
+    					$rootScope.showLoader = false;
+                        SweetAlert.swal("Error", err.data.message + ":(", "error");
+    				});
+    		} else {
+    			$location.path('/');
+    		}
+    	}
+
+        $scope.createOutletForm = function() {
             $rootScope.showLoader = true;
             if(SessionService.isAuthenticated() == true) {
-                $scope.role = "";
+                $scope.outlet = "";
                 $rootScope.showLoader = false;
-                $location.path('/createrole');
+                $location.path('/createoutlet');
             } else {
-                $rootScope.showLoader = false;
                 $location.path('/');
             }
         }
 
-        $scope.createRole = function(role) {
+        $scope.createOutlet = function(outlet) {
+            console.log('ssdsdsdss', outlet);
             if(SessionService.isAuthenticated() == true) {
-                Roles.createRole(role).then(
+                outlet.createdBy = SessionService.getSessionUser().result._id;
+                Outlet.createOutlet(outlet).then(
                     function(response) {
                         if(response.data.status == "success") {
                             SweetAlert.swal({ title: "Success!", text: response.data.message, type: "success" }, function() {
-                                $location.path('/roleslist');
+                                $location.path('/outletlist');
                             });
                         } else {
                             SweetAlert.swal("Error", err.data.message + ":(", "error");
@@ -57,41 +94,40 @@ angular.module('ladakApp')
                     function(err) {
                         SweetAlert.swal("Error", err.data.message + ":(", "error");
                     });
-            } else {
-                $location.path('/');
             }
         }
 
-        $scope.viewRole = function() {
+        $scope.viewOutlet = function() {
             $rootScope.showLoader = true;
             if(SessionService.isAuthenticated() == true) {
-                var roleId = $routeParams.id;
-                Roles.viewRoleById(roleId).then(
+                var outletId = $routeParams.id;
+                Outlet.viewOutletById(outletId).then(
                     function(response) {
                         if(response.data.status == "success") {
-                           $rootScope.showLoader = false;
-                           $scope.role = response.data.result;
+                            $rootScope.showLoader = false;
+                            $scope.outlet = response.data.result;
                         }
-                    },
+                    }, 
                     function(err) {
                         $rootScope.showLoader = false;
-                       SweetAlert.swal("Error", err.data.message + ":(", "error");
-                    });
+                        SweetAlert.swal("Error", err.data.message + ":(", "error");
+                    })
             } else {
                 $rootScope.showLoader = false;
                 $location.path('/');
             }
         }
 
-        $scope.editRoleForm = function() {
+
+        $scope.editOutletForm = function() {
             $rootScope.showLoader = true;
             if(SessionService.isAuthenticated() == true) {
-                var roleId = $routeParams.id;
-                Roles.viewRoleById(roleId).then(
+                var outletId = $routeParams.id;
+                Outlet.viewOutletById(outletId).then(
                     function(response) {
                         if(response.data.status == "success") {
                            $rootScope.showLoader = false;
-                           $scope.role = response.data.result;
+                           $scope.outlet = response.data.result;
                         }
                     },
                     function(err) {
@@ -104,13 +140,16 @@ angular.module('ladakApp')
             }
         }
 
-        $scope.updateRole = function(role) {
+        $scope.updateOutlet = function(outlet) {
             if(SessionService.isAuthenticated() == true) {
-                Roles.updateRole(role._id, role).then(
+                outlet.outletTypeId = outlet.outletTypeId._id;
+                //outlet.outletmanagerId = outlet.outletmanagerId._id;
+                outlet.lastmodifiedBy = SessionService.getSessionUser().result._id;
+                Outlet.updateOutlet(outlet._id, outlet).then(
                     function(response) {
                         if(response.data.status == "success") {
                             SweetAlert.swal({ title: "Success!", text: response.data.message, type: "success" }, function() {
-                                $location.path('/roleslist');
+                                $location.path('/outletlist');
                             });
                         }
                     },
@@ -122,10 +161,10 @@ angular.module('ladakApp')
             }
         }
 
-        $scope.deleteRole = function(roleId) {
+        $scope.deleteOutlet = function(outletId) {
             if(SessionService.isAuthenticated() == true) {
                 SweetAlert.swal({ title: "Are you sure?",
-                   text: "Your will not be able to recover this role!",
+                   text: "Your will not be able to recover this outlet!",
                    type: "warning",
                    showCancelButton: true,
                    confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!",
@@ -134,12 +173,12 @@ angular.module('ladakApp')
                    closeOnCancel: false }, 
                 function(isConfirm){ 
                    if (isConfirm) {
-                      Roles.deleteRole(roleId).then(
+                      Outlet.deleteOutlet(outletId).then(
                         function(response) {
                             if(response.data.status == "success") {
                                 SweetAlert.swal({ title: "Deleted!", text: response.data.message, type: "success" }, function() {
                                     $route.reload();
-                                });
+                                });  
                             }
                         },
                         function(err) {
@@ -147,11 +186,14 @@ angular.module('ladakApp')
                         });
                       
                    } else {
-                      SweetAlert.swal("Cancelled", "Your role is safe :)", "error");
+                      SweetAlert.swal("Cancelled", "Your outlet is safe :)", "error");
                    }
                 });
             } else {
                 $location.path('/');
             }
+
         }
+
     }]);
+        

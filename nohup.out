@@ -137,3 +137,852 @@ Total 503ms
 [36mCompleted in 1.043s at Thu Jan 11 2018 18:37:54 GMT+0530 (IST)[39m - Waiting...
 [32m>> [39mFile "app/index.html" changed.
 [36mCompleted in 0.000s at Thu Jan 11 2018 18:51:02 GMT+0530 (IST)[39m - Waiting...
+[4mRunning "serve" task[24m
+
+[4mRunning "clean:server" (clean) task[24m
+[32m>> [39m1 path cleaned.
+
+[4mRunning "wiredep:app" (wiredep) task[24m
+
+[4mRunning "wiredep:test" (wiredep) task[24m
+
+[4mRunning "concurrent:server" (concurrent) task[24m
+    
+    [4mRunning "copy:styles" (copy) task[24m
+    Copied 1 file
+    
+    [32mDone, without errors.[39m
+    
+    
+    Execution Time (2018-01-11 19:13:59 UTC+5:30)
+    loading tasks               298ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 86%
+    loading grunt-contrib-copy   25ms  ▇▇▇ 7%
+    copy:styles                  24ms  ▇▇▇ 7%
+    Total 348ms
+    
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "connect:livereload" (connect) task[24m
+Started connect web server on http://projects.udaantechnologies.com:9000
+
+[4mRunning "watch" task[24m
+Waiting...
+
+[36mReloading watch config...[39m
+
+[4mRunning "watch" task[24m
+Waiting...
+[32m>> [39mFile "app/index.html" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[32m>> [39mFile "app/scripts/app.js" changed.
+[32m>> [39mFile "app/views/dashboard.html" changed.
+[32m>> [39mFile "app/partials/header.html" changed.
+[32m>> [39mFile "app/scripts/controllers/dashboard.js" changed.
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[32m>> [39mFile "app/scripts/controllers/user.js" changed.
+[32m>> [39mFile "Gruntfile.js" changed.
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/scripts/services/user.js" changed.
+[32m>> [39mFile "app/scripts/services/auth.js" deleted.
+[32m>> [39mFile "app/views/login.html" deleted.
+[32m>> [39mFile "app/views/register.html" deleted.
+[32m>> [39mFile "app/views/reset-password.html" deleted.
+[32m>> [39mFile "app/scripts/controllers/header.js" renamed.
+[32m>> [39mFile "app/scripts/controllers/roles.js" added.
+[32m>> [39mFile "app/scripts/directives/password-match.js" added.
+[32m>> [39mFile "app/scripts/services/header.js" added.
+[32m>> [39mFile "app/scripts/services/roles.js" added.
+[32m>> [39mFile "app/views/roles" renamed.
+[32m>> [39mFile "app/views/user" added.
+[4mRunning "newer:copy:styles" (newer) task[24m
+No newer files to process.
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-12 19:04:44 UTC+5:30)
+loading tasks          323ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 41%
+loading grunt-newer     50ms  ▇▇▇ 6%
+newer:copy:styles       28ms  ▇▇ 4%
+loading grunt-postcss   77ms  ▇▇▇▇ 10%
+postcss:server         284ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 36%
+postcss:dist            24ms  ▇▇ 3%
+Total 787ms
+
+[4mRunning "newer:jshint:all" (newer) task[24m
+No newer files to process.
+
+[4mRunning "newer:jscs:all" (newer) task[24m
+No newer files to process.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-12 19:04:45 UTC+5:30)
+loading tasks        325ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 79%
+loading grunt-newer   51ms  ▇▇▇▇▇▇ 12%
+newer:jshint:all      29ms  ▇▇▇ 7%
+newer:jscs:all         8ms  ▇ 2%
+Total 414ms
+
+[36mCompleted in 5.490s at Fri Jan 12 2018 19:04:45 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/scripts/controllers/user.js" changed.
+[4mRunning "newer:jshint:all" (newer) task[24m
+
+[4mRunning "jshint:all" (jshint) task[24m
+[31mERROR[0m: Can't find config file: .jshintrc
+
+
+Execution Time (2018-01-12 19:23:06 UTC+5:30)
+loading tasks                 283ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 41%
+loading grunt-newer            43ms  ▇▇ 6%
+newer:jshint:all               25ms  ▇▇ 4%
+loading grunt-contrib-jshint  174ms  ▇▇▇▇▇▇▇▇▇ 25%
+jshint:all                    167ms  ▇▇▇▇▇▇▇▇ 24%
+Total 693ms
+
+[36mCompleted in 1.218s at Fri Jan 12 2018 19:23:07 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/index.html" changed.
+[32m>> [39mFile "app/scripts/controllers/roles.js" changed.
+[32m>> [39mFile "app/scripts/controllers/user.js" changed.
+[32m>> [39mFile "app/scripts/services/user.js" changed.
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[32m>> [39mFile "app/scripts/app.js" changed.
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/partials/header.html" changed.
+[32m>> [39mFile "app/scripts/services/roles.js" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[32m>> [39mFile "app/scripts/services/department.js" added.
+[32m>> [39mFile "app/scripts/services/property.js" added.
+[32m>> [39mFile "app/scripts/controllers/department.js" added.
+[32m>> [39mFile "app/scripts/controllers/property.js" added.
+[32m>> [39mFile "app/views/department" added.
+[32m>> [39mFile "app/views/property" added.
+[4mRunning "newer:jshint:all" (newer) task[24m
+No newer files to process.
+
+[4mRunning "newer:jscs:all" (newer) task[24m
+No newer files to process.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 12:54:53 UTC+5:30)
+loading tasks        308ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 80%
+loading grunt-newer   44ms  ▇▇▇▇▇ 11%
+newer:jshint:all      24ms  ▇▇▇ 6%
+newer:jscs:all         9ms  ▇ 2%
+Total 386ms
+
+[4mRunning "newer:copy:styles" (newer) task[24m
+No newer files to process.
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 12:54:54 UTC+5:30)
+loading tasks          318ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 43%
+loading grunt-newer     50ms  ▇▇▇ 7%
+newer:copy:styles       26ms  ▇▇ 4%
+loading grunt-postcss   67ms  ▇▇▇▇ 9%
+postcss:server         250ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 34%
+postcss:dist            25ms  ▇▇ 3%
+Total 737ms
+
+[36mCompleted in 5.479s at Mon Jan 15 2018 12:54:55 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[36mCompleted in 0.000s at Mon Jan 15 2018 12:54:55 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[36mCompleted in 0.000s at Mon Jan 15 2018 14:14:56 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/scripts/app.js" changed.
+[4mRunning "newer:jshint:all" (newer) task[24m
+
+[4mRunning "jshint:all" (jshint) task[24m
+[31mERROR[0m: Can't find config file: .jshintrc
+
+
+Execution Time (2018-01-15 14:16:45 UTC+5:30)
+loading tasks                 333ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 47%
+loading grunt-newer            51ms  ▇▇▇ 7%
+newer:jshint:all               28ms  ▇▇ 4%
+loading grunt-contrib-jshint  208ms  ▇▇▇▇▇▇▇▇▇▇ 29%
+jshint:all                     94ms  ▇▇▇▇▇ 13%
+Total 715ms
+
+[36mCompleted in 1.246s at Mon Jan 15 2018 14:16:46 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/scripts/app.js" changed.
+[4mRunning "newer:jshint:all" (newer) task[24m
+
+[4mRunning "jshint:all" (jshint) task[24m
+[31mERROR[0m: Can't find config file: .jshintrc
+
+
+Execution Time (2018-01-15 14:18:39 UTC+5:30)
+loading tasks                 333ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 47%
+loading grunt-newer            51ms  ▇▇▇ 7%
+newer:jshint:all               30ms  ▇▇ 4%
+loading grunt-contrib-jshint  200ms  ▇▇▇▇▇▇▇▇▇▇ 28%
+jshint:all                     90ms  ▇▇▇▇▇ 13%
+Total 705ms
+
+[36mCompleted in 1.191s at Mon Jan 15 2018 14:18:39 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[36mCompleted in 0.003s at Mon Jan 15 2018 14:19:18 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/scripts/app.js" changed.
+[4mRunning "newer:jshint:all" (newer) task[24m
+
+[4mRunning "jshint:all" (jshint) task[24m
+[31mERROR[0m: Can't find config file: .jshintrc
+
+
+Execution Time (2018-01-15 14:40:14 UTC+5:30)
+loading tasks                 315ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 47%
+loading grunt-newer            49ms  ▇▇▇ 7%
+newer:jshint:all               27ms  ▇▇ 4%
+loading grunt-contrib-jshint  180ms  ▇▇▇▇▇▇▇▇▇ 27%
+jshint:all                     94ms  ▇▇▇▇▇ 14%
+Total 666ms
+
+[36mCompleted in 1.189s at Mon Jan 15 2018 14:40:14 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/scripts/app.js" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 14:45:22 UTC+5:30)
+loading tasks                   314ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 43%
+loading grunt-newer              43ms  ▇▇ 6%
+newer:copy:styles                23ms  ▇ 3%
+loading grunt-contrib-copy        8ms  ▇ 1%
+copy:styles                      10ms  ▇ 1%
+newer-postrun:...-newer/.cache  113ms  ▇▇▇▇▇ 15%
+loading grunt-postcss            76ms  ▇▇▇▇ 10%
+postcss:server                  120ms  ▇▇▇▇▇ 16%
+postcss:dist                     26ms  ▇▇ 4%
+Total 734ms
+
+[36mCompleted in 1.258s at Mon Jan 15 2018 14:45:23 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 14:47:36 UTC+5:30)
+loading tasks                   281ms  ▇▇▇▇▇▇▇▇▇▇▇▇ 40%
+loading grunt-newer              45ms  ▇▇ 6%
+newer:copy:styles                24ms  ▇▇ 3%
+loading grunt-contrib-copy       10ms  ▇ 1%
+copy:styles                      10ms  ▇ 1%
+newer-postrun:...-newer/.cache  114ms  ▇▇▇▇▇ 16%
+loading grunt-postcss            76ms  ▇▇▇▇ 11%
+postcss:server                  123ms  ▇▇▇▇▇▇ 17%
+postcss:dist                     25ms  ▇▇ 4%
+Total 709ms
+
+[36mCompleted in 1.241s at Mon Jan 15 2018 14:47:36 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 14:48:59 UTC+5:30)
+loading tasks                   301ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 41%
+loading grunt-newer              47ms  ▇▇ 6%
+newer:copy:styles                24ms  ▇ 3%
+loading grunt-contrib-copy        9ms  ▇ 1%
+copy:styles                      10ms  ▇ 1%
+newer-postrun:...-newer/.cache  119ms  ▇▇▇▇▇ 16%
+loading grunt-postcss            79ms  ▇▇▇▇ 11%
+postcss:server                  122ms  ▇▇▇▇▇ 17%
+postcss:dist                     25ms  ▇▇ 3%
+Total 737ms
+
+[36mCompleted in 1.261s at Mon Jan 15 2018 14:48:59 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 14:49:56 UTC+5:30)
+loading tasks                   285ms  ▇▇▇▇▇▇▇▇▇▇▇▇ 38%
+loading grunt-newer              44ms  ▇▇ 6%
+newer:copy:styles                23ms  ▇ 3%
+loading grunt-contrib-copy        9ms  ▇ 1%
+copy:styles                       9ms  ▇ 1%
+newer-postrun:...-newer/.cache  115ms  ▇▇▇▇▇ 16%
+loading grunt-postcss            83ms  ▇▇▇▇ 11%
+postcss:server                  142ms  ▇▇▇▇▇▇ 19%
+postcss:dist                     30ms  ▇▇ 4%
+Total 741ms
+
+[36mCompleted in 1.235s at Mon Jan 15 2018 14:49:57 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 14:51:09 UTC+5:30)
+loading tasks                   288ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 40%
+loading grunt-newer              45ms  ▇▇ 6%
+newer:copy:styles                24ms  ▇▇ 3%
+loading grunt-contrib-copy        9ms  ▇ 1%
+copy:styles                      10ms  ▇ 1%
+newer-postrun:...-newer/.cache  119ms  ▇▇▇▇▇ 17%
+loading grunt-postcss            74ms  ▇▇▇▇ 10%
+postcss:server                  123ms  ▇▇▇▇▇▇ 17%
+postcss:dist                     26ms  ▇▇ 4%
+Total 719ms
+
+[36mCompleted in 1.202s at Mon Jan 15 2018 14:51:10 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 14:53:50 UTC+5:30)
+loading tasks                   302ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 41%
+loading grunt-newer              47ms  ▇▇ 6%
+newer:copy:styles                25ms  ▇▇ 3%
+loading grunt-contrib-copy        9ms  ▇ 1%
+copy:styles                      10ms  ▇ 1%
+newer-postrun:...-newer/.cache  121ms  ▇▇▇▇▇ 16%
+loading grunt-postcss            75ms  ▇▇▇▇ 10%
+postcss:server                  124ms  ▇▇▇▇▇ 17%
+postcss:dist                     28ms  ▇▇ 4%
+Total 744ms
+
+[36mCompleted in 1.275s at Mon Jan 15 2018 14:53:51 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 15:18:34 UTC+5:30)
+loading tasks                   303ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 41%
+loading grunt-newer              44ms  ▇▇ 6%
+newer:copy:styles                23ms  ▇ 3%
+loading grunt-contrib-copy        9ms  ▇ 1%
+copy:styles                       9ms  ▇ 1%
+newer-postrun:...-newer/.cache  118ms  ▇▇▇▇▇ 16%
+loading grunt-postcss            78ms  ▇▇▇▇ 11%
+postcss:server                  128ms  ▇▇▇▇▇▇ 17%
+postcss:dist                     29ms  ▇▇ 4%
+Total 742ms
+
+[36mCompleted in 1.271s at Mon Jan 15 2018 15:18:35 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 16:35:32 UTC+5:30)
+loading tasks                   297ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 41%
+loading grunt-newer              45ms  ▇▇ 6%
+newer:copy:styles                24ms  ▇ 3%
+loading grunt-contrib-copy        9ms  ▇ 1%
+copy:styles                       9ms  ▇ 1%
+newer-postrun:...-newer/.cache  119ms  ▇▇▇▇▇ 16%
+loading grunt-postcss            76ms  ▇▇▇▇ 10%
+postcss:server                  124ms  ▇▇▇▇▇▇ 17%
+postcss:dist                     27ms  ▇▇ 4%
+Total 731ms
+
+[36mCompleted in 1.259s at Mon Jan 15 2018 16:35:33 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/scripts/app.js" changed.
+[4mRunning "newer:jshint:all" (newer) task[24m
+
+[4mRunning "jshint:all" (jshint) task[24m
+[31mERROR[0m: Can't find config file: .jshintrc
+
+
+Execution Time (2018-01-15 17:00:03 UTC+5:30)
+loading tasks                 283ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 45%
+loading grunt-newer            44ms  ▇▇▇ 7%
+newer:jshint:all               26ms  ▇▇ 4%
+loading grunt-contrib-jshint  180ms  ▇▇▇▇▇▇▇▇▇▇ 29%
+jshint:all                     97ms  ▇▇▇▇▇ 15%
+Total 631ms
+
+[36mCompleted in 1.135s at Mon Jan 15 2018 17:00:04 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[36mCompleted in 0.000s at Mon Jan 15 2018 17:00:57 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[36mCompleted in 0.000s at Mon Jan 15 2018 17:03:07 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 18:17:29 UTC+5:30)
+loading tasks                   281ms  ▇▇▇▇▇▇▇▇▇▇▇▇ 40%
+loading grunt-newer              44ms  ▇▇ 6%
+newer:copy:styles                25ms  ▇▇ 4%
+loading grunt-contrib-copy        8ms  ▇ 1%
+copy:styles                       9ms  ▇ 1%
+newer-postrun:...-newer/.cache  113ms  ▇▇▇▇▇ 16%
+loading grunt-postcss            75ms  ▇▇▇▇ 11%
+postcss:server                  123ms  ▇▇▇▇▇▇ 17%
+postcss:dist                     25ms  ▇▇ 4%
+Total 705ms
+
+[36mCompleted in 1.220s at Mon Jan 15 2018 18:17:30 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/index.html" changed.
+[32m>> [39mFile "app/scripts/controllers/user.js" changed.
+[32m>> [39mFile "app/scripts/controllers/roles.js" changed.
+[32m>> [39mFile "app/partials/header.html" changed.
+[32m>> [39mFile "app/views/dashboard.html" changed.
+[32m>> [39mFile "app/scripts/controllers/header.js" changed.
+[32m>> [39mFile "app/scripts/app.js" changed.
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:jshint:all" (newer) task[24m
+
+[4mRunning "jshint:all" (jshint) task[24m
+[31mERROR[0m: Can't find config file: .jshintrc
+
+
+Execution Time (2018-01-15 18:21:44 UTC+5:30)
+loading tasks                 301ms  ▇▇▇▇▇▇▇▇▇▇▇▇ 36%
+loading grunt-newer            47ms  ▇▇ 6%
+newer:jshint:all               27ms  ▇▇ 3%
+loading grunt-contrib-jshint  154ms  ▇▇▇▇▇▇ 19%
+jshint:all                    300ms  ▇▇▇▇▇▇▇▇▇▇▇▇ 36%
+Total 830ms
+
+[4mRunning "newer:copy:styles" (newer) task[24m
+No newer files to process.
+
+[4mRunning "postcss:server" (postcss) task[24m
+[31mFatal error: /var/www/vhosts/udaantechnologies.com/projects/ladak/.tmp/styles/main.css:128:1: Unknown word
+    width: 110px!important;
+>>>>>>> aa24424f2438d3e70f5e82f3637546c2f0a29942
+^
+}[39m
+
+
+Execution Time (2018-01-15 18:21:46 UTC+5:30)
+loading tasks          407ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 33%
+loading grunt-newer     65ms  ▇▇▇ 5%
+newer:copy:styles       31ms  ▇ 3%
+loading grunt-postcss   77ms  ▇▇▇ 6%
+postcss:server         653ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 53%
+Total 1.2s
+
+[36mCompleted in 9.592s at Mon Jan 15 2018 18:21:47 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 18:22:52 UTC+5:30)
+loading tasks                   436ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 45%
+loading grunt-newer              64ms  ▇▇ 7%
+newer:copy:styles                33ms  ▇▇ 3%
+loading grunt-contrib-copy       19ms  ▇ 2%
+copy:styles                      64ms  ▇▇ 7%
+newer-postrun:...-newer/.cache  117ms  ▇▇▇▇ 12%
+loading grunt-postcss            63ms  ▇▇ 7%
+postcss:server                  139ms  ▇▇▇▇▇ 14%
+postcss:dist                     30ms  ▇ 3%
+Total 966ms
+
+[36mCompleted in 1.501s at Mon Jan 15 2018 18:22:53 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[36mCompleted in 0.000s at Mon Jan 15 2018 18:26:01 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 18:27:13 UTC+5:30)
+loading tasks                   340ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 45%
+loading grunt-newer              51ms  ▇▇▇ 7%
+newer:copy:styles                22ms  ▇ 3%
+loading grunt-contrib-copy        8ms  ▇ 1%
+copy:styles                       9ms  ▇ 1%
+newer-postrun:...-newer/.cache   92ms  ▇▇▇▇ 12%
+loading grunt-postcss            65ms  ▇▇▇ 9%
+postcss:server                  136ms  ▇▇▇▇▇▇ 18%
+postcss:dist                     27ms  ▇▇ 4%
+Total 751ms
+
+[36mCompleted in 1.298s at Mon Jan 15 2018 18:27:14 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[36mCompleted in 0.000s at Mon Jan 15 2018 18:27:49 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-15 18:49:18 UTC+5:30)
+loading tasks                   304ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 41%
+loading grunt-newer              44ms  ▇▇ 6%
+newer:copy:styles                24ms  ▇ 3%
+loading grunt-contrib-copy        9ms  ▇ 1%
+copy:styles                      10ms  ▇ 1%
+newer-postrun:...-newer/.cache  118ms  ▇▇▇▇▇ 16%
+loading grunt-postcss            75ms  ▇▇▇▇ 10%
+postcss:server                  123ms  ▇▇▇▇▇▇ 17%
+postcss:dist                     27ms  ▇▇ 4%
+Total 735ms
+
+[36mCompleted in 1.266s at Mon Jan 15 2018 18:49:19 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[36mCompleted in 0.000s at Mon Jan 15 2018 19:15:52 GMT+0530 (IST)[39m - Waiting...
+[4mRunning "serve" task[24m
+
+[4mRunning "clean:server" (clean) task[24m
+[32m>> [39m1 path cleaned.
+
+[4mRunning "wiredep:app" (wiredep) task[24m
+
+[4mRunning "wiredep:test" (wiredep) task[24m
+
+[4mRunning "concurrent:server" (concurrent) task[24m
+    
+    [4mRunning "copy:styles" (copy) task[24m
+    Copied 1 file
+    
+    [32mDone, without errors.[39m
+    
+    
+    Execution Time (2018-01-16 09:54:18 UTC+5:30)
+    loading tasks               279ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+    loading grunt-contrib-copy   25ms  ▇▇▇ 8%
+    copy:styles                  24ms  ▇▇▇ 7%
+    Total 329ms
+    
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "connect:livereload" (connect) task[24m
+[31mFatal error: getaddrinfo ENOTFOUND http://projects.udaantechnologies.com[39m
+
+
+Execution Time (2018-01-16 09:54:17 UTC+5:30)
+loading tasks                  282ms  ▇▇▇▇▇ 15%
+wiredep:app                    198ms  ▇▇▇▇ 11%
+wiredep:test                    23ms  ▇ 1%
+concurrent:server              804ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 44%
+loading grunt-postcss           73ms  ▇▇ 4%
+postcss:server                 258ms  ▇▇▇▇▇ 14%
+loading grunt-contrib-connect  133ms  ▇▇▇ 7%
+connect:livereload              35ms  ▇ 2%
+Total 1.8s
+
+[4mRunning "serve" task[24m
+
+[4mRunning "clean:server" (clean) task[24m
+[32m>> [39m1 path cleaned.
+
+[4mRunning "wiredep:app" (wiredep) task[24m
+
+[4mRunning "wiredep:test" (wiredep) task[24m
+
+[4mRunning "concurrent:server" (concurrent) task[24m
+    
+    [4mRunning "copy:styles" (copy) task[24m
+    Copied 1 file
+    
+    [32mDone, without errors.[39m
+    
+    
+    Execution Time (2018-01-16 14:58:47 UTC+5:30)
+    loading tasks               278ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 85%
+    loading grunt-contrib-copy   26ms  ▇▇▇ 8%
+    copy:styles                  23ms  ▇▇▇ 7%
+    Total 328ms
+    
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "connect:livereload" (connect) task[24m
+Started connect web server on http://projects.udaantechnologies.com:9000
+
+[4mRunning "watch" task[24m
+Waiting...
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[36mCompleted in 0.001s at Tue Jan 16 2018 14:59:18 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-16 15:00:48 UTC+5:30)
+loading tasks                   312ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 43%
+loading grunt-newer              44ms  ▇▇ 6%
+newer:copy:styles                23ms  ▇ 3%
+loading grunt-contrib-copy        9ms  ▇ 1%
+copy:styles                       9ms  ▇ 1%
+newer-postrun:...-newer/.cache  112ms  ▇▇▇▇▇ 15%
+loading grunt-postcss            72ms  ▇▇▇ 10%
+postcss:server                  121ms  ▇▇▇▇▇ 17%
+postcss:dist                     25ms  ▇▇ 3%
+Total 728ms
+
+[36mCompleted in 1.253s at Tue Jan 16 2018 15:00:49 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[4mRunning "newer:copy:styles" (newer) task[24m
+
+[4mRunning "copy:styles" (copy) task[24m
+Copied 1 file
+
+[4mRunning "newer-postrun:copy:styles:1:/var/www/vhosts/udaantechnologies.com/projects/ladak/node_modules/grunt-newer/.cache" (newer-postrun) task[24m
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-16 15:02:11 UTC+5:30)
+loading tasks                   327ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇ 40%
+loading grunt-newer              52ms  ▇▇ 6%
+newer:copy:styles                26ms  ▇ 3%
+loading grunt-contrib-copy       10ms  ▇ 1%
+copy:styles                      11ms  ▇ 1%
+newer-postrun:...-newer/.cache  134ms  ▇▇▇▇▇ 17%
+loading grunt-postcss            84ms  ▇▇▇▇ 10%
+postcss:server                  135ms  ▇▇▇▇▇▇ 17%
+postcss:dist                     29ms  ▇▇ 4%
+Total 809ms
+
+[36mCompleted in 1.353s at Tue Jan 16 2018 15:02:12 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[36mCompleted in 0.000s at Tue Jan 16 2018 15:05:20 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[36mCompleted in 0.000s at Tue Jan 16 2018 15:05:20 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile "app/index.html" changed.
+[32m>> [39mFile "app/partials/header.html" changed.
+[32m>> [39mFile "app/scripts/controllers/property.js" changed.
+[32m>> [39mFile "app/scripts/services/department.js" changed.
+[32m>> [39mFile "app/scripts/controllers/department.js" changed.
+[32m>> [39mFile "app/scripts/services/property.js" changed.
+[32m>> [39mFile "app/styles/main.css" changed.
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[4mRunning "newer:jshint:all" (newer) task[24m
+
+[4mRunning "jshint:all" (jshint) task[24m
+[31mERROR[0m: Can't find config file: .jshintrc
+
+
+Execution Time (2018-01-16 15:07:41 UTC+5:30)
+loading tasks                 314ms  ▇▇▇▇▇▇▇▇▇▇▇ 33%
+loading grunt-newer            44ms  ▇▇ 5%
+newer:jshint:all               25ms  ▇ 3%
+loading grunt-contrib-jshint  176ms  ▇▇▇▇▇▇ 19%
+jshint:all                    391ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 41%
+Total 951ms
+
+[4mRunning "newer:copy:styles" (newer) task[24m
+No newer files to process.
+
+[4mRunning "postcss:server" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[4mRunning "postcss:dist" (postcss) task[24m
+[32m>> [39m1 processed stylesheet created.
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2018-01-16 15:07:42 UTC+5:30)
+loading tasks          278ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 38%
+loading grunt-newer     44ms  ▇▇▇ 6%
+newer:copy:styles       24ms  ▇▇ 3%
+loading grunt-postcss   66ms  ▇▇▇▇ 9%
+postcss:server         282ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 39%
+postcss:dist            30ms  ▇▇ 4%
+Total 726ms
+
+[36mCompleted in 6.560s at Tue Jan 16 2018 15:07:43 GMT+0530 (IST)[39m - Waiting...
+[32m>> [39mFile ".tmp/styles/main.css" changed.
+[32m>> [39mFile "app/partials/sidebar.html" changed.
+[36mCompleted in 0.000s at Tue Jan 16 2018 15:10:34 GMT+0530 (IST)[39m - Waiting...

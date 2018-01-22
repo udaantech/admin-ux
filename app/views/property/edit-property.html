@@ -1,0 +1,131 @@
+<div id="page-wrapper">
+      <div header-bar></div>
+       <div side-bar></div>
+
+    <div id="page-content-wrapper" ng-init="editPropertyForm()" ng-controller = "PropertyCtrl">
+        <div id="page-content">
+            <div class="container">
+                <div class="content-box">
+                    <h3 class="content-box-header bg-primary">
+                        <i class="glyph-icon icon-pencil-square-o"></i>
+                        Update Property
+                    </h3>
+                    <div class="content-box-wrapper">
+                        <form name="form"  ng-submit="updateProperty(property)" class="form-horizontal bordered-row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Name</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="name" name="name" ng-model="property.name" data-toggle="tooltip" data-placement="top" title="name" placeholder="Name" required>
+                                </div>
+                                <span class="form-validation" ng-show="form.name.$dirty && form.name.$error.required">Name is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Description</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="description" name="description" ng-model="property.description" data-toggle="tooltip" data-placement="top" title="Description" placeholder="Description" required>
+                                </div>
+                                 <span class="form-validation" ng-show="form.description.$dirty && form.description.$error.required">Description is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Organization id</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="orgId" name="orgId" ng-model="property.orgId" ng-value="myVar" data-toggle="tooltip" data-placement="top" title="organization id" placeholder="Organization id">
+                                </div>
+                                 <span class="form-validation" ng-show="form.orgId.$dirty && form.orgId.$error.required">Organization id is required</span>
+                            </div>
+                            
+                             <div class="form-group">
+                                    <label class="col-sm-3 control-label">Sales Person Id</label>
+                                    <div class="col-sm-6">
+                                        <select name="salespersonId" ng-model="property.salespersonId._id" class="form-control single" required>
+                                            <option value="">Select One</option>
+                                            <option ng-repeat="x in userslistData" value="{{x._id}}">{{x.firstname+' '+x.lastname | capitalizeWord}}</option>
+                                        </select>
+                                        <span class="form-validation" ng-show="form.salespersonId.$dirty && form.salespersonId.$error.required">SalespersonId is required</span>
+                                    </div>
+                                </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Rating</label>
+                                <div class="col-sm-6">
+                                    <input type="text" min="1" class="form-control" id="rating" name="rating" ng-model="property.rating" data-toggle="tooltip" data-placement="top" title="Rating" placeholder="rating">
+                                </div>
+                                 <span class="form-validation" ng-show="form.rating.$dirty && form.rating.$error.required">Rating is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Address</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="address" name="address" ng-model="property.address" data-toggle="tooltip" data-placement="top" title="Address" placeholder="Address" required>
+                                </div>
+                                 <span class="form-validation" ng-show="form.address.$dirty && form.address.$error.required">Address is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Gps Latitude</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="gps_lat" name="gps_lat" ng-model="property.gps_lat" data-toggle="tooltip" data-placement="top" title="Gps Latitude" placeholder="Gps Latitude" required>
+                                </div>
+                                 <span class="form-validation" ng-show="form.gps_lat.$dirty && form.gps_lat.$error.required">Gps Latitude is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Gps Longitude</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="gps_long" name="gps_long" ng-model="property.gps_long" data-toggle="tooltip" data-placement="top" title="Gps Longitude" placeholder="Gps Longitude" required>
+                                </div>
+                                 <span class="form-validation" ng-show="form.gps_long.$dirty && form.gps_long.$error.required">Gps Longitude is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">No of Rooms</label>
+                                <div class="col-sm-6">
+                                    <input type="text" min="1" class="form-control" id="numberRooms" name="numberRooms" ng-model="property.numberRooms" data-toggle="tooltip" data-placement="top" title="No of Rooms" placeholder="No of Rooms" required>
+                                </div>
+                                 <span class="form-validation" ng-show="form.numberRooms.$dirty && form.numberRooms.$error.required">No of Rooms is required</span>
+                            </div>
+
+                            <!-- <h3>SocialWebsite</h3> -->
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Facebook</label>
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control" id="socialFacebook" name="socialFacebook" ng-model="property.socialFacebook" data-toggle="tooltip" data-placement="top" title="Facebook" placeholder="Facebook">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Instagram</label>
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control" id="socialInstagram" name="socialInstagram" ng-model="property.socialInstagram" data-toggle="tooltip" data-placement="top" title="Instagram" placeholder="Instagram">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Twitter</label>
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control" id="socialTwitter" name="socialTwitter" ng-model="property.socialTwitter" data-toggle="tooltip" data-placement="top" title="Twitter" placeholder="Twitter">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Tripadvisor</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="socialTripadvisor" name="socialTripadvisor" ng-model="property.socialTripadvisor" data-toggle="tooltip" data-placement="top" title="Tripadvisor" placeholder="Tripadvisor">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group text-center">
+                                <a href="/#!/propertylist" class="btn btn-border btn-alt border-green btn-link font-green" title="Back">Back</a>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                            
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

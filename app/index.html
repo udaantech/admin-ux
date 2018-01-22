@@ -230,6 +230,7 @@
 
     <link rel="stylesheet" type="text/css" href="./styles/main.css">
 
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-datatables/dist/css/angular-datatables.min.css">
     <!-- JS Core -->
 
     <script type="text/javascript" src="./styles/assets/js-core/jquery-core.js"></script>
@@ -242,42 +243,33 @@
     <script type="text/javascript" src="./styles/assets/js-core/jquery-cookie.js"></script>
 
 
-
-
-
-    <script type="text/javascript">
-        $(window).load(function() {
+    <!-- <script type="text/javascript">
+        $(window).load(function() { 
             setTimeout(function() {
                 $('#loading').fadeOut(400, "linear");
             }, 300);
         });
-    </script>
-
-
+    </script> -->
 
 </head>
 
 <body ng-app="ladakApp">
+
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div id="loading">
+    <!-- <div id="loading">
         <div class="spinner">
             <div class="bounce1"></div>
             <div class="bounce2"></div>
             <div class="bounce3"></div>
         </div>
-    </div>
+    </div> -->
 
-  
-    <!--  <div id="page-wrapper">
-      <div header-bar></div>
-       <div side-bar></div> -->
-        <div ng-view="" style="height:100%"></div>
-    <!-- </div> -->
-
+    <div ng-view="" style="height:100%"></div>
+    
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
@@ -292,10 +284,13 @@
     <script src="bower_components/ngSweetAlert/SweetAlert.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+     <script src="bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
 
     <script type="text/javascript" src="./styles/assets/sweetalert/sweetalert.min.js"></script>
     <script type="text/javascript" src="./styles/assets/sweetalert/angular-sweetalert.min.js"></script>
     <!-- WIDGETS -->
+
     <script type="text/javascript" src="./styles/assets/tether/js/tether.js"></script>
     <script type="text/javascript" src="./styles/assets/bootstrap/js/bootstrap.js"></script>
 
@@ -344,7 +339,7 @@
     <!-- Theme layout -->
 
     <script type="text/javascript" src="./styles/assets/themes/admin/layout.js"></script>
-
+    
     <!-- Theme switcher -->
 
     <script type="text/javascript" src="./styles/assets/widgets/theme-switcher/themeswitcher.js"></script>
@@ -359,6 +354,8 @@
     <script src="scripts/controllers/roles.js"></script>
     <script src="scripts/controllers/property.js"></script>
     <script src="scripts/controllers/department.js"></script>
+    <script src="scripts/controllers/outlet.js"></script>
+    <script src="scripts/controllers/outletType.js"></script>
     
     <!-- ************Services js*********************-->
     <script src="scripts/services/header.js"></script>
@@ -368,6 +365,8 @@
     <script src="scripts/services/roles.js"></script>
     <script src="scripts/services/property.js"></script>
     <script src="scripts/services/department.js"></script>
+    <script src="scripts/services/outlet.js"></script>
+    <script src="scripts/services/outletType.js"></script>
     <!-- ************Directives js*********************-->
     <script src="scripts/directives/header.js"></script>
     <script src="scripts/directives/sidebar.js"></script>

@@ -1,59 +1,52 @@
 <div id="page-wrapper">
-      <div header-bar></div>
-       <div side-bar></div>
+  <div header-bar></div>
+   <div side-bar></div>
 
-<div id="page-content-wrapper" ng-init = "rolesList()" ng-controller = "RoleCtrl">
-    <div id="page-content">
-            <div class="container">
+    <div id="page-content-wrapper">
+        <div id="page-content">
+<div class="container" ng-init ="rolesList()" ng-controller = "RoleCtrl">
 
+<div class="content-box">
+    <h3 class="content-box-header bg-primary">
+        All Roles
+        <div class="header-buttons">
+            <a href="javascript:void(0)" ng-click="createRoleForm()" class="btn btn-sm btn-default no-border" title="Create Property">Create Role</a>
+        </div>
+    </h3>
+    <div class="content-box-wrapper">
+        <table datatable="ng" dt-options="dtOptions" class="table table-striped table-bordered table-hover dataTables-example">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Created Date</th>
+            <th>Option</th>
+        </tr>
+    </thead>
 
-
-<div class="panel">
-<div class="panel-body">
-<h3 class="title-hero add-list-btn">
-    All Roles List
-    <span class="pull-right">
-         <a href="/#!/createrole" class="btn btn-primary" title="Create Role">Create Role</a>
-    </span>
-</h3>
-<div class="example-box-wrapper">
-
-<table id="datatable-row-highlight" class="table table-striped table-bordered" cellspacing="0" width="100%">
-<thead>
-<tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Option</th>
-</tr>
-</thead>
-
-<tfoot>
-<tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Option</th>
-</tr>
-</tfoot>
-
-<tbody>
-<tr ng-repeat="role in roleslist">
-    <td>{{role.name}}</td>
-    <td>{{role.description}}</td>
-    <td>
-        <div class="btn-group btn-group-xs wrape-all-btns">
-            <a href="/#!/viewrole/{{role._id}}" class="btn cust-one btn-default btn-xs" data-toggle="tooltip" title="View"> <i class="glyph-icon icon-share"></i></a> 
-            <a href="/#!/editrole/{{role._id}}" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Edit"> <i class="glyph-icon icon-edit"></i></a>
-            <a href="javascript:void(0)" ng-click="deleteRole(role._id)" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete"> <i class="glyph-icon icon-trash-o"></i></a>
-        </div> 
-    </td>
-</tr>
-
-</tbody>
+        <tbody>
+        <tr ng-repeat="role in roleslist">
+            <td>{{ role.name | capitalizeWord}}</td>
+            <td>{{ role.description }}</td>
+            <td>{{ (role.isActive) ? 'Active' : 'Inactive' }}</td>
+            <td>{{ role.createdAt | date }}</td>
+            <td>
+                <div class="btn-group btn-group-xs wrape-all-btns">
+                    <a href="/#!/viewrole/{{role._id}}" class="btn cust-one btn-default btn-xs" data-toggle="tooltip" title="View"> <i class="glyph-icon icon-share"></i></a> 
+                    <a href="/#!/editrole/{{role._id}}" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Edit"> <i class="glyph-icon icon-edit"></i></a>
+                    <a href="javascript:void(0)" ng-click="deleteRole(role._id)" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete"> <i class="glyph-icon icon-trash-o"></i></a>
+                </div> 
+            </td>
+        </tr>
+    </tbody>
 </table>
-</div>
-</div>
-</div>
             </div>
-    </div>
+        </div>
+
+
+</div>
+
+</div>
 </div>
 </div>

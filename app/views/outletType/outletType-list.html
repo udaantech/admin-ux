@@ -1,0 +1,50 @@
+<div id="page-wrapper">
+  <div header-bar></div>
+   <div side-bar></div>
+
+    <div id="page-content-wrapper">
+        <div id="page-content">
+<div class="container" ng-init ="outletTypeList()" ng-controller = "OutletTypeCtrl">
+
+<div class="content-box">
+    <h3 class="content-box-header bg-primary">
+        All Outlet Type
+        <div class="header-buttons">
+            <a href="javascript:void(0)" ng-click="createOutletTypeForm()" class="btn btn-sm btn-default no-border" title="Create OutletType">Create Outlet Type</a>
+        </div>
+    </h3>
+    <div class="content-box-wrapper">
+        <table datatable="ng" dt-options="dtOptions" class="table table-striped table-bordered table-hover dataTables-example">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Created Date</th>
+            <th>Option</th>
+        </tr>
+    </thead>
+
+        <tbody>
+        <tr ng-repeat="outletType in outletTypelist">
+            <td>{{ outletType.name | capitalizeWord}}</td>
+            <td>{{ outletType.description }}</td>
+            <td>{{ outletType.createdAt | date }}</td>
+            <td>
+                <div class="btn-group btn-group-xs wrape-all-btns">
+                    <a href="/#!/viewoutlettype/{{outletType._id}}" class="btn cust-one btn-default btn-xs" data-toggle="tooltip" title="View"> <i class="glyph-icon icon-share"></i></a> 
+                    <a href="/#!/editoutlettype/{{outletType._id}}" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Edit"> <i class="glyph-icon icon-edit"></i></a>
+                    <a href="javascript:void(0)" ng-click="deleteOutletType(outletType._id)" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete"> <i class="glyph-icon icon-trash-o"></i></a>
+                </div> 
+            </td>
+        </tr>
+    </tbody>
+</table>
+            </div>
+        </div>
+
+
+</div>
+
+</div>
+</div>
+</div>

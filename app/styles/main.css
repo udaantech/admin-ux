@@ -88,6 +88,121 @@ body {
   border-radius: 4px!important;
 }
 
+/*--------------sumit- 16-01-2018---------*/
+ .form-validation {
+    color: red;
+ }
+/*--------------sumit- 16-01-2018---------*/
+
+
+
+/*.portfolio-nav-alt {
+  margin: 0 0 20px;
+  padding: 20px 0;
+}
+.portfolio-controls.portfolio-nav-alt ul li.active a:hover, .portfolio-controls.portfolio-nav-alt ul li.active a, .portfolio-controls.portfolio-nav-alt ul li a:hover{
+  color: rgb(255, 255, 255);
+}
+.portfolio-controls ul li.active a:hover, .portfolio-controls ul li.active a, .portfolio-controls ul li a:hover{
+  background: rgba(0, 0, 0, 0.05) none repeat scroll 0 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.portfolio-controls ul li a{
+  display: block;
+  float: left;
+  height: 32px;
+  text-decoration: none;
+  line-height: 32px;
+  margin: 0 5px;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0 10px;
+}
+.portfolio-controls.portfolio-nav-alt ul li.active a{
+  color: rgba(255, 255, 255, 0.6);
+}*/
+.timing-action{
+  text-align: center;
+  width: 90px;
+}
+.timing-action span{
+  display: inline-block; 
+  width: 49%; 
+  text-align: center; 
+  vertical-align: top;
+  padding-top: 10px;
+}
+.dataTable th:last-child {
+    width: 110px!important;
+}
+#sidebar-menu .sfHover .sidebar-submenu {
+  display: block!important;
+}
+#sidebar-menu > li > a.sf-with-ul::after {
+  height: 20px;
+  line-height: 21px;
+  margin-top: -10px;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transition-duration: 0.5s;
+  transition-property: transform;
+  width: 20px;
+}
+/*.photogellery-section{
+  padding: 30px 0;
+}*/
+.photogellery-section > h3 {
+  border-bottom: 1px dashed rgb(223, 232, 241);
+  margin-bottom: 10px;
+  padding: 10px 0;
+}
+.photogellery-section img{
+  width: 140px;
+}
+
+.menues-section{
+  padding: 30px 0;
+}
+.menues-section > h3 {
+  border-bottom: 1px dashed rgb(223, 232, 241);
+  margin-bottom: 10px;
+  padding: 10px 0;
+}
+.menues-section ul{
+  list-style: none;
+  padding: 0;
+}
+#loadingbar, .irs-line-mid, .irs-line-left, .irs-line-right, div.switch-toggle.switch-on, .bootstrap-switch-primary, .ui-tabs-nav li.ui-state-active > a, .ui-tabs-nav li.ui-state-active.ui-state-hover > a, .ms-hover.ui-state-focus, .ui-accordion-header.ui-accordion-header-active, .ui-slider-handle, .ui-rangeSlider-bar, .ui-dialog-buttonset button, .ui-datepicker .ui-datepicker-current-day a, .ui-datepicker .ui-datepicker-current-day span, .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next, .daterangepicker .ranges li.active, .daterangepicker .ranges li.active:hover, .form-wizard > ul > li.active .wizard-step, .ui-spinner .ui-spinner-button:hover, .ui-menu li > a:hover, .ms-list .ms-hover, .chosen-container .chosen-results li.active-result.highlighted, div[id^="uniform-"] span.checked, .nav > li.active > a, .nav > li.active > a:hover, .nav > li.active > a:focus, a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus, li.active a.list-group-item, li.active a.list-group-item:hover, li.active a.list-group-item:focus, .label-primary, .badge-primary, .fc-event, .bg-primary, .btn-primary, .owl-controls .owl-page span, #nav-toggle.collapsed span, #nav-toggle span::before, #nav-toggle span::after {
+  background: rgb(0, 188, 164) none repeat scroll 0 0!important;
+}
+#sidebar-menu > li > a {
+  font-size: 14px;
+  color: #000;
+}
+#page-sidebar ul li a .glyph-icon {
+  color: rgb(0, 0, 0);
+}
+.loader-sect{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  text-align: center;
+  z-index: 9999;
+  padding: 14% 0;
+}
+.loader-sect img{
+  width: 300px;
+}
+.closed-sidebar #header-logo .logo-content-small{
+  display: none;
+}
+.closed-sidebar #header-logo > a{
+  font-size: 15px!important;
+}
 
 
 /* Responsive: Portrait tablets and up */

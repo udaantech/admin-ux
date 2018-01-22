@@ -1,0 +1,39 @@
+<div id="page-wrapper">
+  <div header-bar></div>
+   <div side-bar></div>
+
+    <div id="page-content-wrapper">
+        <div id="page-content">
+<div class="container" ng-init="viewOutletType()" ng-controller="OutletTypeCtrl">
+
+    <div class="content-box">
+        <h3 class="content-box-header bg-primary">
+            View Outlet Type
+            <div class="header-buttons">
+                <a href="/#!/outlettypelist" class="btn btn-sm btn-default no-border" title="Back">Back</a>
+
+            </div>
+        </h3>
+        <div class="content-box-wrapper">
+                            <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td>{{outletType.name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>{{outletType.description}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+        </div>
+    </div>
+    
+    </div>
+</div>
+
+</div>
+</div>
+</div>

@@ -18,10 +18,16 @@ angular
         'ngSanitize',
         'ngTouch',
         'LocalStorageModule',
-        'oitozero.ngSweetAlert'
+        'oitozero.ngSweetAlert',
+        'datatables'
     ])
     .constant({
         'endpoint': 'http://projects.udaantechnologies.com:3000/'
+    })
+    .filter('capitalizeWord', function() {
+        return function(text) {
+            return (!!text) ? text.charAt(0).toUpperCase() + text.substr(1).toLowerCase() : '';
+        }
     })
     .config(function($routeProvider) {
         
@@ -78,9 +84,65 @@ angular
                 templateUrl: 'views/property/property-list.html',
                 controller: 'PropertyCtrl'
             })
+            .when('/createproperty', {
+               templateUrl: 'views/property/add-property.html',
+                controller: 'PropertyCtrl'
+            })
+            .when('/viewproperty/:id', {
+                templateUrl: 'views/property/view-property.html',
+                controller: 'PropertyCtrl'
+            })
+            .when('/editproperty/:id', {
+                templateUrl: 'views/property/edit-property.html',
+                controller: 'PropertyCtrl'
+            })
             .when('/departmentlist', {
                 templateUrl: 'views/department/department-list.html',
                 controller: 'DepartmentCtrl'
+            })
+            .when('/createdepartment', {
+                templateUrl: 'views/department/add-department.html',
+                controller: 'DepartmentCtrl'
+            })
+            .when('/viewdepartment/:id', {
+                templateUrl: 'views/department/view-department.html',
+                controller: 'DepartmentCtrl'
+            })
+            .when('/editdepartment/:id', {
+                templateUrl: 'views/department/edit-department.html',
+                controller: 'DepartmentCtrl'
+            })
+            .when('/outletlist', {
+                templateUrl: 'views/outlet/outlet-list.html',
+                controller: 'OutletCtrl'
+            })
+            .when('/createoutlet', {
+                templateUrl: 'views/outlet/add-outlet.html',
+                controller: 'OutletCtrl'
+            })
+            .when('/viewoutlet/:id', {
+                templateUrl: 'views/outlet/view-outlet.html',
+                controller: 'OutletCtrl'
+            })
+            .when('/editoutlet/:id', {
+                templateUrl: 'views/outlet/edit-outlet.html',
+                controller: 'OutletCtrl'
+            })
+            .when('/outlettypelist', {
+                templateUrl: 'views/outletType/outletType-list.html',
+                controller: 'OutletTypeCtrl'
+            })
+            .when('/createoutlettype', {
+                templateUrl: 'views/outletType/add-outletType.html',
+                controller: 'OutletTypeCtrl'
+            })
+            .when('/viewoutlettype/:id', {
+                templateUrl: 'views/outletType/view-outletType.html',
+                controller: 'OutletTypeCtrl'
+            })
+            .when('/editoutlettype/:id', {
+                templateUrl: 'views/outletType/edit-outletType.html',
+                controller: 'OutletTypeCtrl'
             })
             .otherwise({
                 redirectTo: '/'

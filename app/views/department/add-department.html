@@ -1,0 +1,218 @@
+<div id="page-wrapper">
+    <div header-bar></div>
+    <div side-bar></div>
+
+    <div id="page-content-wrapper" ng-controller = "DepartmentCtrl">
+        <div id="page-content">
+                <div class="container">
+                     <div class="content-box" style="float: left; width: 100%;">
+                        <h3 class="content-box-header bg-primary">
+                            <i class="glyph-icon icon-plus"></i>
+                            Add Department
+                        </h3>
+                        <div class="content-box-wrapper">
+                            <form name="form" ng-submit="createDepartment(department)" class="form-horizontal wrape-depart-two">
+                                <div class="col-sm-6" style="padding: 0">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="name" name="name" ng-model="department.name" placeholder="Name" required>
+
+                                            <span class="form-validation" ng-show="form.name.$dirty && form.name.$error.required">Name is required</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input type="email" class="form-control" id="email" name="email" ng-model="department.email" placeholder="Email" required>
+                                        </div>
+
+                                        <span class="form-validation" ng-show="form.email.$dirty && form.email.$invalid">
+                                        <span ng-show="form.email.$error.required">Email is required.</span>
+                                        <span ng-show="form.email.$error.email">Invalid email address.</span>
+                                        </span>
+                                    </div>
+                                   <!--  <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="phone" name="phone" ng-model="department.phone" placeholder="Phone">
+                                        </div>
+                                        <span class="form-validation" ng-show="form.phone.$dirty && form.phone.$error.required">Phone is required</span>
+                                    </div> -->
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="extension" name="extension" ng-model="department.extension" placeholder="Extension">
+                                        </div>
+                                        <span class="form-validation" ng-show="form.extension.$dirty && form.extension.$error.required">Extension is required</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <select name="propertyId" ng-model="department.propertyId" class="custom-select" style="height: 34px;width: 100%;" required>
+                                                <option value="">Select Property</option>
+                                                <option ng-repeat="x in propertylistData" value="{{x._id}}">{{x.name | capitalizeWord}}</option>
+                                            </select>
+
+                                            <span class="form-validation" ng-show="form.propertyId.$dirty && form.propertyId.$error.required">Property is required</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-sm-6" style="padding: 0">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="managerinDutyId" name="managerinDutyId" ng-model="department.managerinDutyId" ng-value="myVar" placeholder="ManagerinDutyId" required>
+                                        </div>
+                                        <span class="form-validation" ng-show="form.managerinDutyId.$dirty && form.managerinDutyId.$error.required">ManagerinDutyId is required</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <select name="type" ng-model="department.type" class="custom-select" style="height: 34px;width: 100%;" required>
+                                                <option value="">Select Type</option>
+                                                <option value="Executive Office">Executive Office</option>
+                                                <option value="Front Office">Front Office</option>
+                                                <option value="Engineering">Engineering</option>
+                                                <option value="Sales">Sales</option>
+                                                <option value="Housekeeping">Housekeeping</option>
+                                                <option value="Reservation">Reservation</option>
+                                                <option value="Security">Security</option>
+                                                <option value="F&B">F&B</option>
+                                            </select>
+
+                                            <span class="form-validation" ng-show="form.type.$dirty && form.type.$error.required">Type is required</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <select name="managerId" ng-model="department.managerId" class="custom-select" style="height: 34px;width: 100%;" required>
+                                                <option value="">Select Manager</option>
+                                                <option ng-repeat="x in userslistData" value="{{x._id}}">{{x.firstname+' '+x.lastname | capitalizeWord}}</option>
+                                            </select>
+
+                                            <span class="form-validation" ng-show="form.managerId.$dirty && form.managerId.$error.required">Manager is required</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <select name="supervisorId" ng-model="department.supervisorId" class="custom-select" style="height: 34px;width: 100%;" required>
+                                                <option value="">Select Supervisor</option>
+                                                <option ng-repeat="x in userslistData" value="{{x._id}}">{{x.firstname+' '+x.lastname | capitalizeWord}}</option>
+                                            </select>
+                                            <span class="form-validation" ng-show="form.supervisorId.$dirty && form.supervisorId.$error.required">Supervisor is required</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                                <div class="form-group text-center col-sm-12" style="float: left;">
+                                    <a href="/#!/departmentlist" class="btn btn-border btn-alt border-green btn-link font-green" title="Back">Back</a>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="panel" style="float: left; width: 100%;">
+                        <div class="panel-body">
+                            <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>Operating</th>
+                                        <th>Hours</th>
+                                        <th colspan="2" style="text-align: center;" class="timing-action">Timing<br/>
+                                            <span>Opening</span>
+                                            <span>Closing</span>
+                                        </th>
+                                        <th colspan="2" style="text-align: center;" class="timing-action">Action <br/>
+                                            <span>A</span>
+                                            <span>B</span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Monday</td>
+                                        <td>A</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tuesday</td>
+                                        <td>A</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wednesday</td>
+                                        <td>A</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thursday</td>
+                                        <td>A</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Friday</td>
+                                        <td>A</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saturday</td>
+                                        <td>A</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sunday</td>
+                                        <td>A</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
+                    <!-- <div id="page-title">
+                        <h2>Audit Trail</h2>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <table class="table table-bordered">
+                                    <tbody>
+                                    <tr>
+                                        <td>Audit</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Created by</td>
+                                        <td>15/01/2018</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Modified by</td>
+                                        <td>15/01/2018</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div> -->
+
+                </div>
+        </div>
+    </div>
+</div>

@@ -3,14 +3,13 @@
         <button id="nav-toggle" class="collapsed" data-toggle="collapse" data-target="#page-sidebar"><span></span></button>
         <a href="/" class="logo-content-small" title="Major Domo"></a>
     </div>
-    <div id="header-logo" class="logo-bg">
-        <a href="/" class="logo-content-big" title="Major Domo">
+    <div id="header-logo" class="logo-bg" style="padding: 23px;">
+        <a href="#!/propertylist" class="" title="Major Domo" style="color:#ddd;font-size: 21px;">
             Major <i>Domo</i>
-            <span>The perfect solution for user interfaces</span>
         </a>
         <a href="/" class="logo-content-small" title="Major Domo">
             Major <i>Domo</i>
-            <span>The perfect solution for user interfaces</span>
+            <!-- <span>The perfect solution for user interfaces</span> -->
         </a>
         <a id="close-sidebar" href="javascript:void(0)" title="Close sidebar">
             <i class="glyph-icon icon-angle-left"></i>
@@ -20,7 +19,7 @@
         <div class="user-account-btn dropdown">
             <a href="javascript:void(0)" title="My Account" class="user-profile clearfix" data-toggle="dropdown">
                 <img width="28" src="./styles/assets/image-resources/gravatar.jpg" alt="Profile image">
-                <span>{{currentUser.firstname+' '+currentUser.lastname}}</span>
+                <span style="font-variant-caps: all-petite-caps;font-size: 17px;">{{currentUser.firstname+' '+currentUser.lastname}}</span>
                 <i class="glyph-icon icon-angle-down"></i>
             </a>
             <div class="dropdown-menu float-left">
@@ -31,15 +30,15 @@
                             <img src="./styles/assets/image-resources/gravatar.jpg" alt="">
                         </div>
                         <div class="user-info">
-                            <span>
+                            <span style="font-variant-caps: all-petite-caps;font-size: 17px;">
                                 {{currentUser.firstname+' '+currentUser.lastname}}
-                                <i>UX/UI developer</i>
+                               <!--  <i>UX/UI developer</i> -->
                             </span>
                             <a href="javascript:void(0)" title="Edit profile">Edit profile</a>
                             <a href="javascript:void(0)" title="View notifications">View notifications</a>
                         </div>
                     </div>
-                    <div class="divider"></div>
+                    <!--<div class="divider"></div>
                     <ul class="reset-ul mrg5B">
                         <li>
                             <a href="javascript:void(0)">
@@ -62,7 +61,7 @@
 
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                     <div class="pad5A button-pane button-pane-alt text-center">
                         <a href="javascript:void(0)" ng-click = "logout(currentUser)" class="btn display-block font-normal btn-danger">
                             <i class="glyph-icon icon-power-off"></i>
@@ -75,122 +74,30 @@
     </div><!-- #header-nav-left -->
 
     <div id="header-nav-right">
-        <a href="javascript:void(0)" class="hdr-btn popover-button" title="Search" data-placement="bottom" data-id="#popover-search">
-            <i class="glyph-icon icon-search"></i>
-        </a>
-        <div class="hide" id="popover-search">
-            <div class="pad5A box-md">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search terms here ...">
-                    <span class="input-group-btn">
-                        <a class="btn btn-primary" href="javascript:void(0)">Search</a>
-                    </span>
-                </div>
-            </div>
-        </div>
         <a href="javascript:void(0)" class="hdr-btn" id="fullscreen-btn" title="Fullscreen">
             <i class="glyph-icon icon-arrows-alt"></i>
         </a>
    
 
     </div><!-- #header-nav-right -->
+    <div class="loader-sect" ng-show="showLoader">
+        <img src="/images/loader.gif">
+    </div>
+    <!-- <div ng-show="showLoader">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>  -->
 
 </div>
 
-<!-- Data tables -->
-<script type="text/javascript" src="./styles/assets/widgets/datatable/datatable.js"></script>
-<script type="text/javascript" src="./styles/assets/widgets/datatable/datatable-bootstrap.js"></script>
-<script type="text/javascript" src="./styles/assets/widgets/datatable/datatable-tabletools.js"></script>
 
-<script type="text/javascript">
-
-    /* Datatables basic */
-
-    $(document).ready(function() {
-        $('#datatable-example').dataTable();
-    });
-
-    /* Datatables hide columns */
-
-    $(document).ready(function() {
-        var table = $('#datatable-hide-columns').DataTable( {
-            "scrollY": "300px",
-            "paging": false
-        } );
-
-        $('#datatable-hide-columns_filter').hide();
-
-        $('a.toggle-vis').on( 'click', function (e) {
-            e.preventDefault();
-
-            // Get the column API object
-            var column = table.column( $(this).attr('data-column') );
-
-            // Toggle the visibility
-            column.visible( ! column.visible() );
-        } );
-    } );
-
-    /* Datatable row highlight */
-
-    $(document).ready(function() {
-        var table = $('#datatable-row-highlight').DataTable();
-
-        $('#datatable-row-highlight tbody').on( 'click', 'tr', function () {
-            $(this).toggleClass('tr-selected');
-        } );
-    });
-
-    $(document).ready(function() {
-        $('.dataTables_filter input').attr("placeholder", "Search...");
-    });
-
-</script>
+ <!-- Theme layout -->
+<script type="text/javascript" src="./styles/assets/themes/admin/layout.js"></script>
+<!-- Screenfull -->
+<script type="text/javascript" src="./styles/assets/widgets/screenfull/screenfull.js"></script>
 
 
  
-<script type="text/javascript" src="./styles/assets/widgets/progressbar/progressbar.js"></script>
-
-<script type="text/javascript" src="./styles/assets/widgets/superclick/superclick.js"></script>
-
-<!-- Input switch alternate -->
-
-<script type="text/javascript" src="./styles/assets/widgets/input-switch/inputswitch-alt.js"></script>
-
-<!-- Slim scroll -->
-
-<script type="text/javascript" src="./styles/assets/widgets/slimscroll/slimscroll.js"></script>
-
-<!-- Slidebars -->
-
-<script type="text/javascript" src="./styles/assets/widgets/slidebars/slidebars.js"></script>
-<script type="text/javascript" src="./styles/assets/widgets/slidebars/slidebars-demo.js"></script>
-
-<!-- PieGage -->
-
-<script type="text/javascript" src="./styles/assets/widgets/charts/piegage/piegage.js"></script>
-<script type="text/javascript" src="./styles/assets/widgets/charts/piegage/piegage-demo.js"></script>
-
-<!-- Screenfull -->
-
-<script type="text/javascript" src="./styles/assets/widgets/screenfull/screenfull.js"></script>
-
-<!-- Content box -->
-
-<script type="text/javascript" src="./styles/assets/widgets/content-box/contentbox.js"></script>
-
-<!-- Overlay -->
-
-<script type="text/javascript" src="./styles/assets/widgets/overlay/overlay.js"></script>
-
-<!-- Widgets init for demo -->
-
-<script type="text/javascript" src="./styles/assets/js-init/widgets-init.js"></script>
-
-<!-- Theme layout -->
-
-<script type="text/javascript" src="./styles/assets/themes/admin/layout.js"></script>
-
-<!-- Theme switcher -->
-
-<script type="text/javascript" src="./styles/assets/widgets/theme-switcher/themeswitcher.js"></script>

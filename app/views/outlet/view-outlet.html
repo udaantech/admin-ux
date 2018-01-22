@@ -1,0 +1,94 @@
+<div id="page-wrapper">
+  <div header-bar></div>
+   <div side-bar></div>
+
+    <div id="page-content-wrapper">
+        <div id="page-content">
+<div class="container" ng-init="viewOutlet()" ng-controller="OutletCtrl">
+
+    <div class="content-box">
+        <h3 class="content-box-header bg-primary">
+            View Outlet
+            <div class="header-buttons">
+                <a href="/#!/outletlist" class="btn btn-sm btn-default no-border" title="Back">Back</a>
+
+            </div>
+        </h3>
+        <div class="content-box-wrapper">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <td style="text-transform: capitalize;">{{outlet.name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td style="text-transform: capitalize;">{{outlet.description}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{outlet.email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td>{{outlet.phone}}</td>
+                    </tr>
+                    <tr>
+                        <th>Extention No</th>
+                        <td>{{outlet.extensionNum}}</td>
+                    </tr>
+                    <tr>
+                        <th>Outlet Type</th>
+                        <td>{{outlet.outletTypeId.name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Opening Time</th>
+                        <td>{{outlet.openingtime}}</td>
+                    </tr>
+                    <tr>
+                        <th>Closing Time</th>
+                        <td>{{outlet.openingtime}}</td>
+                    </tr>
+                    <tr>
+                        <th>Outlet Manager</th>
+                        <td>{{outlet.outletmanagerId}}</td>
+                    </tr>
+                    <tr>
+                        <th>Menu Id</th>
+                        <td>{{outlet.menuId}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- <div class="content-box">
+        <h3 class="content-box-header bg-primary">
+            Audit Trail
+        </h3>
+        <div class="content-box-wrapper">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Audit</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><b>Created by -</b> {{outlet.createdBy.firstname+' '+outlet.createdBy.lastname | capitalizeWord}}</td>
+                        <td>{{outlet.createdAt | date}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Modified by -</b> {{outlet.lastmodifiedBy.firstname+' '+outlet.lastmodifiedBy.lastname | capitalizeWord}}</td>
+                        <td>{{outlet.updatedAt | date}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> -->
+    
+    </div>
+</div>
+
+</div>
+</div>
+</div>

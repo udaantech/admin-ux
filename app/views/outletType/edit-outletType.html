@@ -4,40 +4,39 @@
 
     <div id="page-content-wrapper">
         <div id="page-content">
-<div class="container" ng-controller="RoleCtrl">
+<div class="container" ng-init="editOutletTypeForm()" ng-controller="OutletTypeCtrl">
 <div class="content-box">
     <h3 class="content-box-header bg-primary">
-        <i class="glyph-icon icon-plus"></i>
-        Create Role
+        <i class="glyph-icon icon-pencil-square-o"></i>
+        Update Outlet Type
     </h3>
     <div class="content-box-wrapper">
-        <form name="form" ng-submit="createRole(role)" class="form-horizontal bordered-row">
-
+        <form name="form" ng-submit="updateOutletType(outletType)" class="form-horizontal bordered-row">
             <div class="form-group">
                 <label class="col-sm-3 control-label">Name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="name" name="name" ng-model="role.name" placeholder="Enter name" required>
+                    <input type="text" class="form-control" id="name" name="name" ng-model="outletType.name" placeholder="Enter name" required>
                 </div>
-                <span ng-show="form.name.$dirty && form.name.$error.required">Role name is required</span>
+                <span ng-show="form.name.$dirty && form.name.$error.required">Outlet Type name is required</span>
             </div>
 
             <div class="form-group">
                 <label class="col-sm-3 control-label">Description</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="description" name="description" ng-model="role.description" placeholder="Enter description" required>
+                    <input type="text" class="form-control" id="description" name="description" ng-model="outletType.description" placeholder="Enter description" required>
                 </div>
                 <span ng-show="form.description.$dirty && form.description.$error.required">Description is required</span>
             </div>
 
+            
             <div class="form-group text-center">
-                    <a href="/#!/roleslist" class="btn btn-border btn-alt border-green btn-link font-green" title="Back">Back</a>
+                    <a href="/#!/outlettypelist" class="btn btn-border btn-alt border-green btn-link font-green" title="Back">Back</a>
                     <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Save</button>
             </div>
-            
+          
         </form>
     </div>
 </div>
-
 </div>
 
 </div>

@@ -1,0 +1,255 @@
+<div id="page-wrapper">
+      <div header-bar></div>
+       <div side-bar></div>
+
+    <div id="page-content-wrapper" ng-controller="OutletCtrl">
+        <div id="page-content">
+            <div class="container">
+                <div class="content-box">
+                    <h3 class="content-box-header bg-primary">
+                        <i class="glyph-icon icon-plus"></i>
+                        Outlet
+                    </h3>
+                    <div class="content-box-wrapper">
+                       <form name="form" ng-submit="createOutlet(outlet)" class="form-horizontal bordered-row">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Name</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="name" name="name" ng-model="outlet.name" data-toggle="tooltip" data-placement="top" title="Name" placeholder="Name" required>
+                                </div>
+                                <span class="form-validation" ng-show="form.name.$dirty && form.name.$error.required">Name is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Description</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="description" name="description" ng-model="outlet.description" data-toggle="tooltip" data-placement="top" title="Description" placeholder="Description">
+                                </div>
+                                <span class="form-validation" ng-show="form.description.$dirty && form.description.$error.required">Description is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Email</label>
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control" id="email" name="email" ng-model="outlet.email" data-toggle="tooltip" data-placement="top" title="Email" placeholder="Email" required>
+                                </div>
+                                <span class="form-validation" ng-show="form.email.$dirty && form.email.$invalid">
+                                <span ng-show="form.email.$error.required">Email is required.</span>
+                                <span ng-show="form.email.$error.email">Invalid email address.</span>
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Phone</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="phone" name="phone" ng-model="outlet.phone" data-toggle="tooltip" data-placement="top" title="Phone" placeholder="Phone">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Extention No</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="extensionNum" name="extensionNum" ng-model="outlet.extensionNum" data-toggle="tooltip" data-placement="top" title="Extension Number" placeholder="Extension Number">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Outlet Type</label>
+                                <div class="col-sm-6">
+                                    <select name="outletTypeId" ng-model="outlet.outletTypeId" class="form-control single" required>
+                                        <option value="">Select One</option>
+                                        <option ng-repeat="x in outletTypelistData" value="{{x._id}}">{{x.name | capitalizeWord}}</option>
+                                    </select>
+                                    <span class="form-validation" ng-show="form.outletTypeId.$dirty && form.outletTypeId.$error.required">Outlet Type is required</span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Opening Time</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="openingtime" name="openingtime" ng-model="outlet.openingtime" data-toggle="tooltip" data-placement="top" title="Opening Time" placeholder="Opening Time">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Closing Time</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="closingtime" name="closingtime" ng-model="outlet.closingtime" data-toggle="tooltip" data-placement="top" title="Closing Time" placeholder="Closing Time">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Outlet Manager Id</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="outletmanagerId" name="outletmanagerId" ng-model="outlet.outletmanagerId" ng-value="myVar" data-toggle="tooltip" data-placement="top" title="Outlet Manager Id" placeholder="Outlet Manager Id">
+                                </div>
+                            </div>
+
+                             <!-- <div class="form-group">
+                                <label class="col-sm-3 control-label">Outlet Manager</label>
+                                <div class="col-sm-6">
+                                    <select name="outletmanagerId" ng-model="outlet.outletmanagerId" class="form-control single" required>
+                                        <option value="">Select One</option>
+                                        <option ng-repeat="x in userslistData" value="{{x._id}}">{{x.firstname+' '+x.lastname | capitalizeWord}}</option>
+                                    </select>
+                                    <span class="form-validation" ng-show="form.outletmanagerId.$dirty && form.outletmanagerId.$error.required">Outlet Manager is required</span>
+                                </div>
+                            </div> -->
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Menu Id</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="menuId" name="menuId" ng-model="outlet.menuId" ng-value="myVar" data-toggle="tooltip" data-placement="top" title="Menu Id" placeholder="Menu Id">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group text-center">
+                                <a href="/#!/outletlist" class="btn btn-border btn-alt border-green btn-link font-green" title="Back">Back</a>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <h3 class="content-box-header bg-primary">
+                        <i class="glyph-icon icon-empire"></i>
+                        Photo Gallery
+                    </h3>
+                    <div class="content-box-wrapper">
+                        <div class="photogellery-section">
+                            <img src="./images/img-8.jpg" alt="" class="img-thumbnail"> 
+                            <img src="./images/img-8.jpg" alt="" class="img-thumbnail"> 
+                            <img src="./images/img-8.jpg" alt="" class="img-thumbnail"> 
+                            <img src="./images/img-8.jpg" alt="" class="img-thumbnail"> 
+                            <img src="./images/img-8.jpg" alt="" class="img-thumbnail"> 
+                            <img src="./images/img-8.jpg" alt="" class="img-thumbnail">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <h3 class="content-box-header bg-primary">
+                        <i class="glyph-icon icon-align-justify"></i>
+                        Menu
+                    </h3>
+                    <div class="content-box-wrapper">
+                       <ul>
+                            <li>
+                                <button class="btn btn-primary">
+                                    <i class="glyph-icon icon-cloud-upload" title="" data-original-title=".icon-cloud-upload"></i>
+                                    Upload Menu(PDF)
+                                </button>
+                            </li>
+                            <li>
+                                <a class="btn btn-link font-blue" href="#">
+                                    <i class="glyph-icon icon-globe" title="" data-original-title=".icon-globe"></i>
+                                    Webpage Menu(Link)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="record-outlets">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>Operating</th>
+                                        <th>Hours</th>
+                                        <th colspan="2" style="text-align: center;" class="timing-action">Timing<br/>
+                                            <span>Opening</span>
+                                            <span>Closing</span>
+                                        </th>
+                                        <th colspan="2" style="text-align: center;" class="timing-action">Action <br/>
+                                            <span>A</span>
+                                            <span>B</span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Monday</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tuesday</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wednesday</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thursday</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Friday</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saturday</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sunday</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">Last Order</td>
+                                        <td colspan="2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">Audit</td>
+                                    </tr>
+                                     <tr>
+                                        <td colspan="4">Created by Mark</td>
+                                        <td colspan="2">15/01/2018</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">Last Modified John</td>
+                                        <td colspan="2">15/01/2018</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

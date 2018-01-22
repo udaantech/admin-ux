@@ -1,0 +1,117 @@
+<div id="page-wrapper">
+  <div header-bar></div>
+   <div side-bar></div>
+
+    <div id="page-content-wrapper">
+        <div id="page-content">
+<div class="container" ng-init="viewProperty()" ng-controller="PropertyCtrl">
+
+    <div class="content-box">
+        <h3 class="content-box-header bg-primary">
+            View Property
+            <div class="header-buttons">
+                <a href="/#!/propertylist" class="btn btn-sm btn-default no-border" title="Back">Back</a>
+
+            </div>
+        </h3>
+        <div class="content-box-wrapper">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <td style="text-transform: capitalize;">{{property.name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td style="text-transform: capitalize;">{{property.description}}</td>
+                    </tr>
+                    <tr>
+                        <th>Organization</th>
+                        <td>{{property.orgId}}</td>
+                    </tr>
+                    <tr>
+                        <th>Gps Latitude</th>
+                        <td>{{property.gps_lat}}</td>
+                    </tr>
+                    <tr>
+                        <th>Gps Longitude</th>
+                        <td>{{property.gps_long}}</td>
+                    </tr>
+                    <tr>
+                        <th>Rating</th>
+                        <td>{{property.rating}}</td>
+                    </tr>
+                    <tr>
+                        <th>No of Rooms</th>
+                        <td>{{property.numberRooms}}</td>
+                    </tr>
+                    <tr>
+                        <th>Facebook</th>
+                        <td>{{property.socialFacebook}}</td>
+                    </tr>
+                    <tr>
+                        <th>Instagram</th>
+                        <td>{{property.socialInstagram}}</td>
+                    </tr>
+                    <tr>
+                        <th>Twitter</th>
+                        <td>{{property.socialTwitter}}</td>
+                    </tr>
+                    <tr>
+                        <th>Tripadvisor</th>
+                        <td>{{property.socialTripadvisor}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h3 class="content-box-header bg-primary">
+            User Information
+        </h3>
+        <div class="content-box-wrapper">
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td style="text-transform: capitalize;">{{property.salespersonId.firstname+' '+property.salespersonId.lastname | capitalizeWord}}</td>
+                </tr>
+                <tr>
+                    <td>Role</td>
+                    <td style="text-transform: capitalize;">-</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h3 class="content-box-header bg-primary">
+            Audit Trail
+        </h3>
+        <div class="content-box-wrapper">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Audit</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><b>Created by -</b> {{property.createdBy.firstname+' '+property.createdBy.lastname | capitalizeWord}}</td>
+                        <td>{{property.createdAt | date}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Modified by -</b> {{property.lastmodifiedBy.firstname+' '+property.lastmodifiedBy.lastname | capitalizeWord}}</td>
+                        <td>{{property.updatedAt | date}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>

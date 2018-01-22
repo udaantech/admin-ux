@@ -3,46 +3,85 @@
 
 
     <ul id="sidebar-menu">
-    <li class="header"><span>Overview</span></li>
+    <!-- <li class="header"><span>Overview</span></li> -->
     <li>
-        <a href="/#!/userlist" title="All Users">
-            <i class="glyph-icon icon-users"></i>
-            <span>All Users</span>
+        <a href="javascript:void(0)" title="Overview" class="sf-with-ul">
+            <i class="glyph-icon icon-linecons-lightbulb"></i>
+            <span>Overview</span>
         </a>
+        <div class="sidebar-submenu">
+            <ul>
+                <li><a href="/#!/dashboard" title="Dashboard"><span>Dashboard</span></a></li>
+            </ul>
+
+        </div>
     </li>
     <li class="divider"></li>
+   
     <li>
-        <a href="/#!/roleslist" title="All Users">
-            <i class="glyph-icon icon-users"></i>
-            <span>All Roles</span>
+        <a href="javascript:void(0)" title="Property Management" class="sf-with-ul">
+            <i class="glyph-icon icon-building-o"></i>
+            <span>Property Management</span>
         </a>
+        <div class="sidebar-submenu">
+            <ul>
+                <li><a href="/#!/propertylist" title="All Properties"><span>Property</span></a></li>
+                <li><a href="/#!/departmentlist" title="Department"><span>Department</span></a></li>
+                <li><a href="/#!/outletlist" title="Outlets"><span>Outlets</span></a></li>
+                 <!-- <li><a href="/#!/outlettypelist" title="Outlet Type"><span>Outlet Type</span></a></li> -->
+                <li><a href="javascript:void(0)" title="Amneties"><span>Amneties</span></a></li>
+                <li><a href="javascript:void(0)" title="Facilities"><span>Facilities</span></a></li>
+                <li><a href="javascript:void(0)" title="Services"><span>Services</span></a></li>
+                <li><a href="javascript:void(0)" title="Contacts"><span>Contacts</span></a></li>
+            </ul>
+
+        </div>
     </li>
     <li class="divider"></li>
+ 
     <li>
-        <a href="/#!/propertylist" title="All Properties">
-            <i class="glyph-icon icon-users"></i>
-            <span>All Properties</span>
+        <a href="javascript:void(0)" title="Reporting" class="sf-with-ul">
+            <i class="glyph-icon icon-bar-chart"></i>
+            <span>Reporting</span>
         </a>
+        <div class="sidebar-submenu">
+            <ul>
+                
+            </ul>
+
+        </div>
     </li>
     <li class="divider"></li>
-    <li>
-        <a href="/#!/departmentlist" title="All Department">
-            <i class="glyph-icon icon-users"></i>
-            <span>All Department</span>
+      <li>
+        <a href="javascript:void(0)" title="Security and Settings" class="sf-with-ul">
+            <i class="glyph-icon icon-cog"></i>
+            <span>Security and Settings</span>
         </a>
+        <div class="sidebar-submenu">
+            <ul>
+                <li><a href="/#!/userlist" title="All Users"><span>Users</span></a></li>
+                <li><a href="/#!/roleslist" title="All Roles"><span>Roles</span></a></li>
+                <li><a href="javascript:void(0)" title="Security"><span>Security</span></a></li>
+            </ul>
+        </div>
     </li>
     <li class="divider"></li>
-    <!-- <li class="no-menu">
-        <a href="javascript:void(0)" title="Account">
-            <i class="glyph-icon icon-linecons-beaker"></i>
-            <span>Account</span>
-            <span class="bs-label label-danger">
-                NEW
-            </span>
-        </a>
-    </li> -->
+    
        </ul><!-- #sidebar-menu -->
 
 
     </div>
 </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("li").click(function(){  
+            //$('li.sfHover').removeClass('sfHover');
+            //$(this).closest('li').addClass('sfHover');
+            $(this).toggleClass('sfHover');
+        });
+    });
+</script>
+
+
