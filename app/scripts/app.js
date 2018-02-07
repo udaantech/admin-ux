@@ -144,6 +144,22 @@ angular
                 templateUrl: 'views/outletType/edit-outletType.html',
                 controller: 'OutletTypeCtrl'
             })
+            .when('/guestlist', {
+                templateUrl: 'views/guest/guest-list.html',
+                controller: 'GuestCtrl'
+            })
+            .when('/createguest', {
+                templateUrl: 'views/guest/add-guest.html',
+                controller: 'GuestCtrl'
+            })
+            .when('/viewguest/:id', {
+                templateUrl: 'views/guest/view-guest.html',
+                controller: 'GuestCtrl'
+            })
+            .when('/editguest/:id', {
+                templateUrl: 'views/guest/edit-guest.html',
+                controller: 'GuestCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

@@ -1,0 +1,97 @@
+<div id="page-wrapper">
+      <div header-bar></div>
+       <div side-bar></div>
+
+    <div id="page-content-wrapper" ng-init="editGuestForm()" ng-controller = "GuestCtrl">
+        <div id="page-content">
+            <div class="container">
+                <div class="content-box">
+                    <h3 class="content-box-header bg-primary">
+                        <i class="glyph-icon icon-pencil-square-o"></i>
+                        Update Guest
+                    </h3>
+                    <div class="content-box-wrapper">
+                        <form name="form"  ng-submit="updateGuest(guest)" class="form-horizontal bordered-row">
+                            
+                             <div class="form-group">
+                                    <label class="col-sm-3 control-label">Contact Id</label>
+                                    <div class="col-sm-6">
+                                        <select name="contactId" ng-model="guest.contactId._id" class="form-control single" required>
+                                            <option value="">Select One</option>
+                                            <option ng-repeat="x in contactslistData" value="{{x._id}}">{{x.first_name+' '+x.last_name | capitalizeWord}}</option>
+                                        </select>
+                                        <span class="form-validation" ng-show="form.contactId.$dirty && form.contactId.$error.required">ContactId is required</span>
+                                    </div>
+                                </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Group Id</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="groupId" name="groupId" ng-model="guest.groupId" data-toggle="tooltip" data-placement="top" title="GroupId" placeholder="GroupId">
+                                </div>
+                                 <span class="form-validation" ng-show="form.groupId.$dirty && form.groupId.$error.required">GroupId is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Room Number</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="roomNumber" name="roomNumber" ng-model="guest.roomNumber" data-toggle="tooltip" data-placement="top" title="Room Number" placeholder="Room Number" required>
+                                </div>
+                                 <span class="form-validation" ng-show="form.roomNumber.$dirty && form.roomNumber.$error.required">Room Number is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Nationality</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="nationality" name="nationality" ng-model="guest.nationality" data-toggle="tooltip" data-placement="top" title="Nationality" placeholder="Nationality" required>
+                                </div>
+                                 <span class="form-validation" ng-show="form.nationality.$dirty && form.nationality.$error.required">Nationality is required</span>
+                            </div>
+
+                            <div class="form-group">
+                                    <label class="col-sm-3 control-label">Language</label>
+                                    <div class="col-sm-6">
+                                        <select name="languages" ng-model="guest.languages._id" class="form-control single" required>
+                                            <option value="">Select One</option>
+                                            <option ng-repeat="x in languageslistData" value="{{x._id}}">{{x.name | capitalizeWord}}</option>
+                                        </select>
+                                        <span class="form-validation" ng-show="form.languages.$dirty && form.languages.$error.required">Language is required</span>
+                                    </div>
+                                </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Check In Date</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="checkInDate" name="checkInDate" ng-model="guest.checkInDate" data-toggle="tooltip" data-placement="top" title="Check In Date" placeholder="Check In Date">
+                                </div>
+                                <!--  <span class="form-validation" ng-show="form.checkInDate.$dirty && form.checkInDate.$error.required">Check In Date is required</span> -->
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Check Out Date</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="checkOutDate" name="checkOutDate" ng-model="guest.checkOutDate" data-toggle="tooltip" data-placement="top" title="Check Out Date" placeholder="Check Out Date">
+                                </div>
+                                 <!-- <span class="form-validation" ng-show="form.checkOutDate.$dirty && form.checkOutDate.$error.required">Check Out Date is required</span> -->
+                            </div>
+
+                            <!-- <div class="form-group">
+                                <label class="col-sm-3 control-label">Status</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="status" name="status" ng-model="guest.status" data-toggle="tooltip" data-placement="top" title="Status" placeholder="Status">
+                                </div>
+                            </div> -->
+
+                            
+                            <div class="form-group text-center">
+                                <a href="/#!/guestlist" class="btn btn-border btn-alt border-green btn-link font-green" title="Back">Back</a>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

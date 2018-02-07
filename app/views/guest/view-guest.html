@@ -1,0 +1,81 @@
+<div id="page-wrapper">
+  <div header-bar></div>
+   <div side-bar></div>
+
+    <div id="page-content-wrapper">
+        <div id="page-content">
+<div class="container" ng-init="viewGuest()" ng-controller="GuestCtrl">
+
+    <div class="content-box">
+        <h3 class="content-box-header bg-primary">
+            View Guest
+            <div class="header-buttons">
+                <a href="/#!/guestlist" class="btn btn-sm btn-default no-border" title="Back">Back</a>
+
+            </div>
+        </h3>
+        <div class="content-box-wrapper">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Contact Name</th>
+                        <td style="text-transform: capitalize;">{{guest.contactId.first_name+' '+guest.contactId.last_name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Group Id</th>
+                        <td>{{guest.groupId}}</td>
+                    </tr>
+                    <tr>
+                        <th>Room Number</th>
+                        <td>{{guest.roomNumber}}</td>
+                    </tr>
+                    <tr>
+                        <th>Nationality</th>
+                        <td>{{guest.nationality}}</td>
+                    </tr>
+                    <tr>
+                        <th>Language</th>
+                        <td style="text-transform: capitalize;">{{guest.languages.name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Check In Date</th>
+                        <td>{{guest.checkInDate}}</td>
+                    </tr>
+                    <tr>
+                        <th>Check Out Date</th>
+                        <td>{{guest.checkOutDate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h3 class="content-box-header bg-primary">
+            Audit Trail
+        </h3>
+        <div class="content-box-wrapper">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Audit</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><b>Created by -</b> {{guest.createdBy.firstname+' '+guest.createdBy.lastname | capitalizeWord}}</td>
+                        <td>{{guest.createdAt | date}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Modified by -</b> {{guest.lastmodifiedBy.firstname+' '+guest.lastmodifiedBy.lastname | capitalizeWord}}</td>
+                        <td>{{guest.updatedAt | date}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
