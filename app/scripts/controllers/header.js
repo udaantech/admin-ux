@@ -9,6 +9,7 @@
  */
 angular.module('ladakApp')
   .controller('HeaderCtrl', ['Header', 'SessionService', '$location', '$scope', '$rootScope', '$timeout', 'SweetAlert', function(Header, SessionService, $location, $scope, $rootScope, $timeout, SweetAlert) {
+    $rootScope.currentUser = SessionService.getSessionUser().result;
     if(SessionService.isAuthenticated() == true) {
         $rootScope.currentUser = SessionService.getSessionUser().result;
         

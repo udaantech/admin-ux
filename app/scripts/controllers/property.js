@@ -19,7 +19,9 @@ angular.module('ladakApp')
                         }
                     },
                     function(err) {
-                        //console.log('error', err);
+                        if(err.status == -1) {
+                            SweetAlert.swal("Error", "Server not found" + ":(", "error");
+                        } 
                     });
             } else {
                 $location.path('/');

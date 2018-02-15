@@ -19,18 +19,21 @@ angular
         'ngTouch',
         'LocalStorageModule',
         'oitozero.ngSweetAlert',
-        'datatables'
+        'datatables',
+        '720kb.datepicker'
     ])
     .constant({
         'endpoint': 'http://projects.udaantechnologies.com:3000/'
+        //'endpoint': 'http://localhost:3000/'
     })
     .filter('capitalizeWord', function() {
         return function(text) {
             return (!!text) ? text.charAt(0).toUpperCase() + text.substr(1).toLowerCase() : '';
         }
     })
-    .config(function($routeProvider) {
-        
+    .config(function($routeProvider, $locationProvider, $compileProvider, $httpProvider) {
+        //$compileProvider.debugInfoEnabled(false);
+        //$httpProvider.useApplyAsync(true);
         $routeProvider
             .when('/', {
                 templateUrl: 'views/user/login.html',
@@ -82,7 +85,10 @@ angular
             })
             .when('/propertylist', {
                 templateUrl: 'views/property/property-list.html',
-                controller: 'PropertyCtrl'
+                controller: 'PropertyCtrl',
+                // resolve: {
+                //     loggedin: checkLoggedin
+                // }
             })
             .when('/createproperty', {
                templateUrl: 'views/property/add-property.html',
@@ -160,7 +166,43 @@ angular
                 templateUrl: 'views/guest/edit-guest.html',
                 controller: 'GuestCtrl'
             })
+            .when('/entitylist', {
+                templateUrl: 'views/entity/entity-list.html',
+                controller: 'EntityCtrl'
+            })
+            .when('/createentity', {
+                templateUrl: 'views/entity/add-entity.html',
+                controller: 'EntityCtrl'
+            })
+            // .when('/viewentity/:id', {
+            //     templateUrl: 'views/entity/view-entity.html',
+            //     controller: 'EntityCtrl'
+            // })
+            .when('/editentity/:id', {
+                templateUrl: 'views/entity/edit-entity.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
+
+            //$locationProvider.html5Mode(true); //activate HTML5 Mode           
     });
+
+    // var checkLoggedin = function($q, $timeout, $http, $location, SessionService)
+    // {
+    //     var deferred = $q.defer();
+    //     if(SessionService.isAuthenticated() == true) {
+    //         console.log('aaaaaaaaaaaaaaaa');
+    //             deferred.resolve();
+    //         }
+    //         // User is Not Authenticated
+    //         else
+    //         {   console.log('bbbbbbbbbbbb');
+    //             deferred.reject();
+    //             $location.path('/');
+    //         }
+        
+    //     return deferred.promise;
+    // }
+
+   

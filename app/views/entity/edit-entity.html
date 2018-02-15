@@ -1,0 +1,186 @@
+<div id="page-wrapper">
+      <div header-bar></div>
+       <div side-bar></div>
+    <div id="page-content-wrapper" ng-init="editEntityForm()" ng-controller = "EntityCtrl">
+        <div id="page-content">
+            <div class="container">
+                <div class="content-box">
+                    <h3 class="content-box-header bg-primary">
+                        <i class="glyph-icon icon-pencil-square-o"></i>
+                        Update Entity
+                    </h3>
+                    
+                    <div class="content-box-wrapper">
+
+                        <div class="row">
+                            <div class="col-sm-7 entity-form">
+                                <form name="form1" ng-submit="updateEntity(entity)" class="form-horizontal">
+                                  <fieldset>
+                                    <legend>Entity Information:</legend>
+                                    <!-- <h4>
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                                    </h4> -->
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" ng-model="entity.name" data-toggle="tooltip" data-placement="top" title="Name" placeholder="Name" required>
+                                         <span class="form-validation" ng-show="form1.name.$dirty && form1.name.$error.required">Name is required</span>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="title" name="title" ng-model="entity.title" data-toggle="tooltip" data-placement="top" title="Title" placeholder="Title" required>
+                                        <span class="form-validation" ng-show="form1.title.$dirty && form1.title.$error.required">Title is required</span>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <textarea type="text" class="form-control" id="description" name="description" ng-model="entity.description" data-toggle="tooltip" data-placement="top" title="Description" placeholder="Description"></textarea>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                       <!--  <input id="uploadFile" placeholder="Choose File" disabled="disabled" />
+
+                                        <div class="fileUpload btn btn-primary">
+                                            <span>Upload</span>
+                                            <input id="uploadBtn" type="file" class="upload" />
+                                        </div> -->
+                                        <div class="uploaded-img-nw" ng-repeat="step in stepsModel">
+                                            <img class="thumb" ng-src="{{step}}" />
+                                        </div>
+                                        <div class="uploaded-img-nw" ng-if="stepsModel.length == 0">
+                                            <img class="thumb" ng-src="{{imagePath+entity.imageId.name}}" />
+                                        </div>
+                                        
+                                        <input class="form-control" type='file' name="file"   class="form-control" file-model = "entity.file" onchange="angular.element(this).scope().imageUpload(event)" multiple/>
+                                        <span class="form-validation" ng-if="filevalid==false">Please enter a jpeg,png,gif image file.</span>
+                                       <!--  <span class="form-validation" ng-show="form1.file.$dirty && form1.file.$error.required">Image is required</span> -->
+                                    </div>
+
+                                    <div class="form-group">
+                                         <datepicker date-format="yyyy-MM-dd" selector="form-control">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="expiryDate" name="expiryDate" ng-model="entity.expiryDate" ng-value="entity.expiryDate | date : 'yyyy-MM-dd' " placeholder="Choose a date"/>
+                                                <span class="input-group-addon" style="cursor: pointer">
+                                                <i class="glyph-icon icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </datepicker>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="radio-inline"><input type="radio" name="status" ng-model="entity.status" value="Public">Public</label>
+                                        <label class="radio-inline"><input type="radio" name="status" ng-model="entity.status" value="Private">Private</label>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <a href="/#!/entitylist" class="btn btn-border btn-alt border-green btn-link font-green" title="Back">Back</a>
+                                        <button type="submit" ng-disabled="form1.$invalid || filevalid==false" class="btn btn-primary">Edit</button>
+                                        <a href="javascript:void(0)" ng-click="deleteEntity2(entity._id)" class="btn btn-border btn-alt border-red btn-link font-red" title="Back">Delete</a>
+                                    </div>
+                                  </fieldset>
+                                </form>
+                            </div>
+
+
+                            <div class="col-sm-5 entity-form-right">
+                               <form name="form" class="form-horizontal">
+                                    <fieldset>
+                                        <legend>Tags Management:</legend>
+                                        <div ng-repeat="category in categorylist">
+                                            <h3>{{category.label}}</h3>
+                                            <div class="form-group" ng-repeat="tag in category.tags">
+                                                <input type="text" class="form-control" value={{tag.label}} disabled="disabled">
+
+                                                <span ng-if="entityTagsArray.indexOf(tag._id) == -1" class="ch-canc" ng-click="addEntityTag(tag)"><i style="color: #D3D3D3;" class="glyph-icon icon-check"></i></span>
+                                                <span ng-if="entityTagsArray.indexOf(tag._id) != -1" class="ch-canc" ng-click="removeEntityTag(tag)"><i class="glyph-icon icon-check"></i></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group text-center">
+                                            <button class="btn btn-border border-green btn-link font-green" data-toggle="modal" data-target="#tagscategory">Add Tags Category</button>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#addcategory">Add Tags</button>
+                                        </div>
+
+                                    </fieldset>
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- </div>
+</div> -->
+
+
+
+<!-- Modal tags category-->
+<div class="modal fade" id="tagscategory" role="dialog">
+    <form name="form2" ng-submit="createCategory(category)" class="form-horizontal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Tags Category</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-sm-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="label" name="label" ng-model="category.label" data-toggle="tooltip" data-placement="top" title="label" placeholder="Label" required>
+                             <span class="form-validation" ng-show="form2.label.$dirty && form2.label.$error.required">Label is required</span>
+                        </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+
+        </div>
+    </div>
+</form>
+</div>
+
+<!-- Modal add tags-->
+<div class="modal fade" id="addcategory" role="dialog">
+     <form name="form3" ng-submit="createTag(tag)" class="form-horizontal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Tags</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-sm-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="label" name="label" ng-model="tag.label" data-toggle="tooltip" data-placement="top" title="label" placeholder="Label" required>
+                             <span class="form-validation" ng-show="form3.label.$dirty && form3.label.$error.required">Label is required</span>
+                        </div>
+
+                        <div class="form-group">
+                            <select name="categoryId" ng-model="tag.categoryId" class="form-control single" required>
+                                <option value="">Select One</option>
+                                <option ng-repeat="x in categorylist" value="{{x._id}}">{{x.label | capitalizeWord}}</option>
+                            </select>
+                            <span class="form-validation" ng-show="form3.categoryId.$dirty && form3.categoryId.$error.required">CategoryId is required</span>
+                        </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+
+        </div>
+    </div>
+</form>
+</div>
+
+
+</div>
+</div>
+<!-- <script type="text/javascript">
+    document.getElementById("uploadBtn").onchange = function () {
+    document.getElementById("uploadFile").value = this.value;
+};
+</script> -->
+

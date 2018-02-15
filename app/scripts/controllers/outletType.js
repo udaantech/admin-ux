@@ -22,7 +22,11 @@ angular.module('ladakApp')
                     },
                     function(err) {
                         $rootScope.showLoader = false;
-                        SweetAlert.swal("Error", err.data.message + ":(", "error");
+                        if(err.status == -1) {
+                            SweetAlert.swal("Error", "Server not found" + ":(", "error");
+                        } else {
+                             SweetAlert.swal("Error", err.data.message + ":(", "error");
+                        }
                     });
             } else {
                 $rootScope.showLoader = false;

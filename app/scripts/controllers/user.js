@@ -21,11 +21,13 @@ angular.module('ladakApp')
                     }
                 },
                 function(err) {
-                    console.log('error', err);
+                    if(err.status == -1) {
+                        SweetAlert.swal("Error", "Server not found" + ":(", "error");
+                    } else {
+                         SweetAlert.swal("Error", err.data.message + ":(", "error");
+                    }
                 });
-            } else {
-                $location.path('/');
-            }
+            } 
             
         }
 
@@ -45,7 +47,11 @@ angular.module('ladakApp')
                 },
                 function(err) {
                     $rootScope.showLoader = false;
-                    SweetAlert.swal("Error", err.data.message + ":(", "error");
+                    if(err.status == -1) {
+                        SweetAlert.swal("Error", "Server not found" + ":(", "error");
+                    } else {
+                         SweetAlert.swal("Error", err.data.message + ":(", "error");
+                    }
                 });
         } 
 
@@ -64,7 +70,11 @@ angular.module('ladakApp')
                     }
                 },
                 function(err) {
-                    SweetAlert.swal("Error", err.data.message + ":(", "error");
+                    if(err.status == -1) {
+                        SweetAlert.swal("Error", "Server not found" + ":(", "error");
+                    } else {
+                         SweetAlert.swal("Error", err.data.message + ":(", "error");
+                    }
                 });
         }
 
@@ -86,7 +96,11 @@ angular.module('ladakApp')
                 },
                 function(err) {
                     $rootScope.showLoader = false;
-                    SweetAlert.swal("Error", err.data.message + ":(", "error");
+                    if(err.status == -1) {
+                        SweetAlert.swal("Error", "Server not found" + ":(", "error");
+                    } else {
+                         SweetAlert.swal("Error", err.data.message + ":(", "error");
+                    }
                 });
         }
 
